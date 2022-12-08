@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <head>
+        <meta http-equiv="Content-Type" charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Definition du language du site -->
+        <meta http-equiv="Content-Language" content="fr">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Lien avec la feuille de style CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/css/stylegame.css">
+        <!-- Ajout d'un favicon -->
+        <link rel="shortcut icon" href="assets/img/favicon/logo.ico" type="image/x-icon">
+        <!-- Lien avec Unicons -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <!-- Titre -->
+        <title>Tic Tac</title>
+        <!-- Meta description -->
+        <meta name="description" content="Jeu Portfolio | Tanguy AVET">
+        <!-- Requete cible -->
+        <meta name="keywords" content="Portfolio, BTS SIO, Portfolio BTS SIO, Tanguy, Tanguy Avet, Avet">
+    </head>
+</head>
+<body>
+        <!-- ==== LOADER ====-->
+        <div class="loader-container">
+            <div class="loader"></div>
+            <button class="enter">Entrer</button>
+        </div>
+        <main class="background">
+        <!-- Log out -->
+        <a href="index.php" class="log-out">
+            <i class="uil uil-signout log-out-icon"></i>
+        </a>
+        <!-- Infos du jeu -->
+        <section class="title">
+            <h1>Tic Tac Toe</h1>
+        </section>
+        <!-- Section qui annonce quel joueur doit jouer -->
+        <section class="display">
+            Tour du Joueur <span class="display-player playerX"></span>
+        </section>
+        <!-- Grille du jeu -->
+        <section class="container">
+            <!-- Grilles -->
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </section>
+        <!-- Section annoncer joueur qui a gagner -->
+        <section class="display announcer hide"></section>
+        <!-- Section controls, pour recommencer une partie -->
+        <section class="controls">
+            <button id="restart">Recommencer</button>
+        </section>
+    </main>
+    <script src="assets/js/game.js"></script>
+</body>
+</html>

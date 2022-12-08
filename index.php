@@ -1,0 +1,1013 @@
+<!--
+    Projet réalisé par Tanguy Avet
+    Ce projet consiste à la réalisation d'un portfolio en vue de l'examen de fin d'année
+    Début du projet : 23 mai 2022
+    Dernière modification le 2 novembre 2022
+-->
+
+<!-- FORMULAIRE CONTACT -->
+<?php
+    require_once(__DIR__.'/assets/mailjet/vendor/autoload.php');
+    use \Mailjet\Resources;
+
+    define('API_USER', '5af698a571122603ed8201571afdbb4d');
+    define('API_LOGIN', '0fe5a4df77cb1377eff03758cf3a26d8');
+    $mj = new \Mailjet\Client(API_USER, API_LOGIN,true,['version' => 'v3.1']);
+
+    // Si nom et prenom et email et message n'est pas vide alors :
+    if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['message'])){
+        $nom = htmlspecialchars($_POST['nom']);
+        $prenom = htmlspecialchars($_POST['prenom']);
+        $email = htmlspecialchars($_POST['email']);
+        $message = htmlspecialchars($_POST['message']);
+
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $body = [
+                'Messages' => [
+                    [
+                        'From' => [
+                            'Email' => "contact.avet@gmail.com",
+                            'Name' => "Portfolio"
+                        ],
+                        'To' => [
+                            [
+                                'Email' => "contact.avet@gmail.com",
+                                'Name' => "Portfolio"
+                            ]
+                        ],
+                        'Subject' => "Demande de renseignement",
+                        'TextPart' => "$nom, $prenom, $email, $message",
+                    ]
+                ]
+            ];
+            
+            // All resources are located in the Resources class
+            
+            $response = $mj->post(Resources::$Email, ['body' => $body]);
+            
+            // Read the response
+            
+            $response->success();
+            if($response->success()){
+                $success = "L'email à été envoyé avec succès !<br>";
+            }
+        // Si l'email n'est pas conforme
+        }else{
+            header('location: index.php#contact');
+        }
+    // Si un element on regarde le quel c'est et on affecte une chaine de caractere a une variable pour afficher
+    }else{
+        if(isset($_POST) & !empty($_POST)){
+            // PHP Form Validations
+            if(empty($_POST['nom'])){ $nomerror = "Le nom est requis<br>";}
+            if(empty($_POST['prenom'])){ $prenomerror = "Le prenom est requis<br>";}
+            if(empty($_POST['email'])){ $emailerror = "L'email est requis<br>";}
+            if(empty($_POST['message'])){ $messageerror = "Le message est requis<br>";}
+        }
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Definition du language du site -->
+    <meta http-equiv="Content-Language" content="fr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Lien avec la feuille de style CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Ajout d'un favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon/logo.ico" type="image/x-icon">
+    <!-- Lien avec Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Lien avec SwiperJS -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/> -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- Titre -->
+    <title>Portfolio | Tanguy Avet</title>
+    <!-- Meta description -->
+    <meta name="description" content="Portfolio de Tanguy AVET - Etudiant en BTS SIO option SLAM (Solutions Logicielles et Application Métier)">
+    <!-- Requete cible -->
+    <meta name="keywords" content="Portfolio, BTS SIO, Portfolio BTS SIO, Tanguy, Tanguy Avet, Avet">
+</head>
+<body>
+    <!--==== LOADER ====-->
+    <div class="loader-container">
+        <div class="cube">
+            <div class="cube-top"></div>
+            <div>
+                <span style="--i:0;"><h1 class="cube__title">Chargement..</h1></span>
+                <span style="--i:1;"><h1 class="cube__title">Chargement..</h1></span>
+                <span style="--i:2;"><h1 class="cube__title">Chargement..</h1></span>
+                <span style="--i:3;"><h1 class="cube__title">Chargement..</h1></span>
+            </div>
+        </div>
+    </div>
+    <!--==== HEADER ====-->
+    <!-- MENU DEROULANT -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="assets/img/logo.svg" alt="" class="nav__logo-icon">
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">      <!-- Lien vers la section accueil -->
+                            <i class="uil uil-home nav__icon"></i> Accueil
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">     <!-- Lien vers la section about -->
+                            <i class="uil uil-user-circle nav__icon"></i> A Propos
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">    <!-- Lien vers la section skills -->
+                            <i class="uil uil-suitcase-alt nav__icon"></i> Compétences
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#parcours" class="nav__link">    <!-- Lien vers la section qualif -->
+                            <i class="uil uil-file-alt nav__icon"></i> Parcours
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#diplomes" class="nav__link">   <!-- Lien vers la section diplome -->
+                            <i class="uil uil-graduation-cap nav__icon"></i> Diplôme
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#stage" class="nav__link">   <!-- Lien vers la section stage -->
+                            <i class="uil uil-university nav__icon"></i> Stage
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#projet" class="nav__link">   <!-- Lien vers la section projets -->
+                            <i class="uil uil-icons nav__icon"></i> Projets
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">   <!-- Lien vers la section contact -->
+                            <i class="uil uil-comment-alt-message nav__icon"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Ajout icone dark/light -->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--==== MAIN ====-->
+    <main class="main">
+        <!--==== SECTION ACCUEIL/HOME ====-->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <!-- Integration des icones social media -->
+                <div class="home__content grid">
+                    <div class="home__social">
+                        <a href="https://www.snapchat.com/add/tanguy.av?share_id=REZCODAwQkQtQTI3Qi00MDY5LTg3NzUtNDkyMzE0NkNDREEx&locale=fr_FR" target="_blank" class="home__social-icon">
+                            <i class="uil uil-snapchat-ghost"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/tanguy.av/?hl=fr" target="_blank" class="home__social-icon">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+
+                        <a href="https://github.com/Q4zerr/" target="_blank" class="home__social-icon">
+                            <i class="uil uil-github"></i>
+                        </a>
+                    </div>
+
+                    <!-- Integration de l'image blob en arriere de la photo de profil -->
+                    <div class="home__img">
+                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                                <!-- Integration de la photo de profil -->
+                                <image class="home__blob-img" x='12' y='18' xlink:href="assets/img/profile-picture.png"/> <!-- Modifier la photo de profil -->
+                            </g>
+                        </svg>
+                    </div>
+                    <!-- Integration des informations de mon profil -->
+                    <div class="home__data">
+                        <h1 class="home__title">Tanguy AVET</h1>
+                        <h1 class="home__subtitle">Je suis <span class="input__home"></span></h1>
+                        <p class="home__description">Bienvenue sur mon <b>Portfolio</b> !</p>
+                        <a href="#contact" class="button button--flex">
+                            Contactez moi<i class="uil uil-message button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-button button--flex">
+                        <span class="mouse">
+                            <span class="wheel"></span>
+                        </span>
+                        <!-- <i class="uil uil-mouse-alt home__scroll-mouse"></i> -->
+                        <span class="home__scroll-name">Scroller en bas</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--==== SECTION ABOUT ====-->
+        <section class="about section" id="about">
+            <!-- Integration titre et sous-titre de section about -->
+            <h2 class="section__title">A Propos de moi</h2>
+            <span class="section__subtitle">Ma présentation</span>
+            
+            <div class="about__container container grid">
+                
+                <!-- Integration de l'image section about -->
+                <div>
+                    <div>
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#5790E0" d="M49.1,-14.7C57,8.3,52.1,36.6,34.6,49.8C17.2,63.1,-12.9,61.1,-33,46.3C-53,31.5,-63,3.9,-55.9,-18.1C-48.7,-40.1,-24.4,-56.5,-1.9,-55.9C20.6,-55.2,41.2,-37.7,49.1,-14.7Z" transform="translate(100 100)" />
+                            <image class="about__blob-img" x='12' y='18' xlink:href=""/> <!-- Changer l'image de presentation -->
+                        </svg>
+                    </div>
+                </div>
+                <!-- Presentation + annee exp, projects... -->
+                <div class="about__data">
+                    <p class="about__description">Je suis <b>Tanguy AVET</b>, j'ai 19 ans. Je suis titulaire d'un baccalauréat <b>Sciences et Technologies du Management et de la Gestion</b> option <b>Mercatique.</b> 
+                    <br><br>Actuellement, je suis au <b>Lycée Ella Filtzgerald</b> à Saint-Romain-En-Gal, eu deuxième année de <b>BTS SIO</b> (Services informatiques aux organisations) option
+                    <b>SLAM</b> (Solutions Logicielles et Applications Métier)</p>
+
+                    <div class="about__info">
+                        <!-- Annee d'experience -->
+                        <div>
+                            <span class="about__info-title"><i class="uil uil-flask about__icon"></i>+2</span>
+                            <span class="about__info-name">Année <br> d'expérience</span>
+                        </div>
+                        <!-- Projets réalisés -->
+                        <div>
+                            <a href="game.html">
+                                <span class="about__info-title"><i class="uil uil-truck-loading about__icon"></i>4</span>
+                            </a>
+                            <span class="about__info-name">Projets <br> réalisés</span>
+                        </div>
+                        <!-- Niveau Bac -->
+                        <div>
+                            <span class="about__info-title"><i class="uil uil-award about__icon"></i>+2</span>
+                            <span class="about__info-name">Niveau <br> Bac</span>
+                        </div>
+                        <!-- Age -->
+                        <div>
+                            <span class="about__info-title"><i class="uil uil-clock-three about__icon"></i>19</span>
+                            <span class="about__info-name">Age</span>
+                        </div>
+                    </div>
+                    <!-- Bouton Telecharger mon CV -->
+                    <div class="about__buttons">
+                        <a download="" href="assets/pdf/CV_Tanguy.pdf" target="_blank" class="button button--flex">
+                            Télécharger mon CV<i class="uil uil-arrow-circle-down button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==== SECTION COMPETENCES ====-->
+        <section class="skills section" id="skills">
+            <!-- Integration titre et sous-titre section skills/competences -->
+            <h2 class="section__title">Compétences</h2>
+            <span class="section__subtitle">Mon niveau</span>
+
+            <div class="skills__container container grid">
+                <div>
+
+                    <!--== PREMIERE COMPETENCE ==-->
+                    <div class="skills__content skills__open">
+                        <!-- En-tete premiere competence -->
+                        <div class="skills__header">
+                            <!-- Icone guillemet -->
+                            <i class="uil uil-brackets-curly skills__icon"></i>
+                            <!-- Integration du titre de la competence -->
+                            <div>
+                                <h1 class="skills__title">Developpement Frontend</h1>
+                            </div>
+                            <!-- fleche bas pour derouler la competence -->
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <!-- Deroulant de la competence -->
+                        <div class="skills__list grid">
+                            <!-- Premier langage -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">HTML</h3>
+                                    <span class="skills__number">75%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau premier language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__html"></span>
+                                </div>
+                            </div>
+                            <!-- Deuxieme language -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">CSS</h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau deuxieme language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__css"></span>
+                                </div>
+                            </div>
+                            <!-- Troisieme language -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">JavaScript</h3>
+                                    <span class="skills__number">50%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau troisieme language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__js"></span>
+                                </div>
+                            </div>
+                            <!-- Quatrieme language -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">jQuery</h3>
+                                    <span class="skills__number">30%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau quatrieme language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__jquery"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--== DEUXIEME COMPETENCE ==-->
+                    <div class="skills__content skills__close">
+                        <!-- En-tete deuxieme competence -->
+                        <div class="skills__header">
+                            <!-- Icone server -->
+                            <i class="uil uil-server-network-alt skills__icon"></i>
+                            <!-- Integration du titre de la competence -->
+                            <div>
+                                <h1 class="skills__title">Developpement Backend</h1>
+                            </div>
+                            <!-- fleche bas pour derouler la competence -->
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <!-- Deroulant de la competence -->
+                        <div class="skills__list grid">
+                            <!-- Premier langage -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">C#</h3>
+                                    <span class="skills__number">85%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau premier language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__c"></span>
+                                </div>
+                            </div>
+                            <!-- Deuxieme language -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">Python</h3>
+                                    <span class="skills__number">40%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau deuxieme language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__python"></span>
+                                </div>
+                            </div>
+                            <!-- Troisieme language -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">PHP</h3>
+                                    <span class="skills__number">30%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau troisieme language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__php"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <!--== TROISIEME COMPETENCE ==-->
+                    <div class="skills__content skills__close">
+                        <!-- En-tete troisieme competence -->
+                        <div class="skills__header">
+                            <!-- Icone designer -->
+                            <i class="uil uil-palette skills__icon"></i>
+                            <!-- Integration du titre de la competence -->
+                            <div>
+                                <h1 class="skills__title">Design</h1>
+                            </div>
+                            <!-- fleche bas pour derouler la competence -->
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <!-- Deroulant de la competence -->
+                        <div class="skills__list grid">
+                            <!-- Premier langage -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">Figma</h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau deuxieme language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__figma"></span>
+                                </div>
+                            </div>
+                            <!-- Deuxieme langage -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">Canva</h3>
+                                    <span class="skills__number">50%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau premier language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__canva"></span>
+                                </div>
+                            </div>
+                            <!-- Troisième langage -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">Pixlr</h3>
+                                    <span class="skills__number">30%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau deuxieme language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__pixlr"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--== QUATRIEME COMPETENCE ==-->
+                    <div class="skills__content skills__close">
+                        <!-- En-tete quatrieme competence -->
+                        <div class="skills__header">
+                            <!-- Icone designer -->
+                            <i class="uil uil-database skills__icon"></i>
+                            <!-- Integration du titre de la competence -->
+                            <div>
+                                <h1 class="skills__title">Base de données</h1>
+                            </div>
+                            <!-- fleche bas pour derouler la competence -->
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <!-- Deroulant de la competence -->
+                        <div class="skills__list grid">
+                            <!-- Premier langage -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">MySql</h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau deuxieme language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__mysql"></span>
+                                </div>
+                            </div>
+                            <!-- Deuxieme langage -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">SQL</h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau premier language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__sql"></span>
+                                </div>
+                            </div>
+                            <!-- Troisieme language -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <!-- Integration du language + son niveau -->
+                                    <h3 class="skills__name">Laragon</h3>
+                                    <span class="skills__number">60%</span>
+                                </div>
+                                <!-- Integration de la bar de niveau deuxieme language -->
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__laragon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==== SECTION QUALIFICATION ====-->
+        <section class="qualification section" id="parcours">
+            <!-- Integration titre et sous-titre de la section qualification -->
+            <h2 class="section__title">Parcours</h2>
+            <span class="section__subtitle">Mon parcours</span>
+
+            <div class="qualification__container container">
+                <div class="qualification__tabs">
+                    <!-- En tete Etudes -->
+                    <div class="qualification__button button--flex qualification__active" data-target='#education'>
+                        <i class="uil uil-graduation-cap qualification__icon"></i>
+                        Études
+                    </div>
+                    <!-- En tete Travail -->
+                    <div class="qualification__button button--flex" data-target='#work'>
+                        <i class="uil uil-suitcase qualification__icon"></i>
+                        Travail
+                    </div>
+                </div>
+                <!-- Contenu de Etude et Travail -->
+                <div class="qualification__sections">
+                    <!--========== QUALIFICATION CONTENU ETUDE ==========-->
+                    <!--======== IMPORTANT ========-->
+                    <!-- Si un element ne se met pas a gauche ou a droite il faut changer la position de divdiv et ligne chronologique en bas-->
+                    <!-- Voir qualif 1 et qualif 2 pour exemple -->
+                    <div class="qualification__content qualification__active" data-content id="education">
+                        <!--========== QUALIFICATION 1 ==========-->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">BTS SIO option SLAM</h3>
+                                <span class="qualification__subtitle">Vienne - Ella Filtzgerald</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2021 - 2023
+                                </div>
+                            </div>
+                            <!-- Ligne chronologique -->
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+                        <!--========== QUALIFICATION 2 ==========-->
+                        <div class="qualification__data">
+                            <div></div>
+                            <!-- Ligne chronologique -->
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <!-- <span class="qualification__line"></span> -->
+                            </div>
+                            
+                            <div>
+                                <h3 class="qualification__title">Bac STMG option Mercatique</h3>
+                                <span class="qualification__subtitle">LCSA - Hector Berlioz</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2019 - 2021
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--========== QUALIFICATION CONTENU TRAVAIL ==========-->
+                    <div class="qualification__content" data-content id="work">
+                        <!--========== QUALIFICATION 1 ==========-->
+                        <div class="qualification__data">
+                            <div></div>
+                            <!-- Ligne chronologique -->
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                            
+                            <div>
+                                <h3 class="qualification__title">Stage 6 semaines</h3>
+                                <span class="qualification__subtitle">Elixir Création - <br>Vienne, France</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Janvier 2023 - Février 2023
+                                </div>
+                            </div>
+                        </div>
+                        <!--========== QUALIFICATION 3 ==========-->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">SEO & Developpement - Stage 7 semaines</h3>
+                                <span class="qualification__subtitle">La Toile Gauloise - Lyon</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Mai 2022 - Juillet 2022
+                                </div>
+                            </div>
+                            <!-- Ligne chronologique -->
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+                        <!--========== QUALIFICATION 4 ==========-->
+                        <div class="qualification__data">
+                            <div></div>
+                            <!-- Ligne chronologique -->
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                            
+                            <div>
+                                <h3 class="qualification__title">Création de mon Portfolio</h3>
+                                <span class="qualification__subtitle">La Côte Saint André</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Mai 2022 - Juin 2022
+                                </div>
+                            </div>
+                        </div>
+                        <!--========== QUALIFICATION 5 ==========-->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">Création site web d'un club de basket</h3>
+                                <span class="qualification__subtitle">Vienne</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Jan 2022 - Mars 2022
+                                </div>
+                            </div>
+                            <!-- Ligne chronologique -->
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <!-- <span class="qualification__line"></span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==== SECTION DIPLOME ====-->
+        <section class="diplomes section" id="diplomes">
+            <!-- Integration titre et sous-titre -->
+            <h2 class="section__title">Diplôme</h2>
+            <span class="section__subtitle">BTS SIO</span>
+
+            <div class="diplomes__container container grid">
+                <!--==== Presentation Diplome Square 1 ====-->
+                <div class="diplomes__content">
+                    <!-- Integration du titre et icone de square 1 -->
+                    <div>
+                        <i class="uil uil-book diplomes__icon"></i>
+                        <h3 class="diplomes__title">Présentation <br> Diplôme</h3>
+                    </div>
+                    <!-- Integration du bouton Voir Plus -->
+                    <span class="button button--flex button--small button--link diplomes__button">
+                        Voir Plus
+                        <i class="uil uil-arrow-right button__icon"></i>
+                    </span>
+
+                    <div class="diplomes__modal">
+                        <div class="diplomes__modal-content">
+                            <!-- Titre et icone lorsque le modal est derouler -->
+                            <h4 class="diplomes__modal-title">Présentation <br> Diplôme</h4>
+                            <i class="uil uil-times diplomes__modal-close"></i>
+                            <!-- Declaration de la liste contenant les points du square 1-->
+                            <ul class="diplomes__modal-diplomes grid">
+                                <!-- Premier point -->
+                                <li class="diplomes__modal-diplome">
+                                    <i class="uil uil-arrow-circle-right diplomes__modal-icon"></i>
+                                    <p>Le BTS Services Informatiques aux Organisations se déroule en 2 ans.</p>
+                                </li>
+                                <!-- Deuxieme point -->
+                                <li class="diplomes__modal-diplome">
+                                    <i class="uil uil-arrow-circle-right diplomes__modal-icon"></i>
+                                    <p>Possibilité de le faire en formation initial ou en alternance.</p>
+                                </li>
+                                <!-- Troisieme point -->
+                                <li class="diplomes__modal-diplome">
+                                    <i class="uil uil-arrow-circle-right diplomes__modal-icon"></i>
+                                    <p>Deux options sont proposés lors de ce cursus, l'option SLAM ou l'option SISR.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--==== Presentation Diplome Square 2 ====-->
+                <div class="diplomes__content">
+                    <!-- Integration du titre et icone de square 1 -->
+                    <div>
+                        <i class="uil uil-code-branch diplomes__icon"></i>
+                        <h3 class="diplomes__title">Option <br> SLAM</h3>
+                    </div>
+                    <!-- Integration du bouton Voir Plus -->
+                    <span class="button button--flex button--small button--link diplomes__button">
+                        Voir Plus
+                        <i class="uil uil-arrow-right button__icon"></i>
+                    </span>
+
+                    <div class="diplomes__modal">
+                        <div class="diplomes__modal-content">
+                            <!-- Titre et icone lorsque le modal est derouler -->
+                            <h4 class="diplomes__modal-title">Option <br> SLAM</h4>
+                            <i class="uil uil-times diplomes__modal-close"></i>
+                            <!-- Declaration de la liste contenant les points du square 1-->
+                            <ul class="diplomes__modal-diplomes grid">
+                                <!-- Premier point -->
+                                <li class="diplomes__modal-diplome">
+                                    <i class="uil uil-arrow-circle-right diplomes__modal-icon"></i>
+                                    <p>SLAM : Solutions Logicielles et Applications Métier.</p>
+                                </li>
+                                <!-- Deuxieme point -->
+                                <li class="diplomes__modal-diplome">
+                                    <i class="uil uil-arrow-circle-right diplomes__modal-icon"></i>
+                                    <p>Conception, développement de solutions applicatives.</p>
+                                </li>
+                                <!-- Troisieme point -->
+                                <li class="diplomes__modal-diplome">
+                                    <i class="uil uil-arrow-circle-right diplomes__modal-icon"></i>
+                                    <p>Déploiement et maintenance de projets.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--==== Presentation Diplome Square 3 ====-->
+                <div class="diplomes__content">
+                    <!-- Integration du titre et icone de square 1 -->
+                    <div>
+                        <i class="uil uil-server diplomes__icon"></i>
+                        <h3 class="diplomes__title">Option <br> SISR</h3>
+                    </div>
+                    <!-- Integration du bouton Voir Plus -->
+                    <span class="button button--flex button--small button--link diplomes__button">
+                        Voir Plus
+                        <i class="uil uil-arrow-right button__icon"></i>
+                    </span>
+
+                    <div class="diplomes__modal">
+                        <div class="diplomes__modal-content">
+                            <!-- Titre et icone lorsque le modal est derouler -->
+                            <h4 class="diplomes__modal-title">Option <br> SISR</h4>
+                            <i class="uil uil-times diplomes__modal-close"></i>
+                            <!-- Declaration de la liste contenant les points du square 1-->
+                            <ul class="diplomes__modal-diplomes grid">
+                                <!-- Premier point -->
+                                <li class="diplomes__modal-diplome">
+                                    <i class="uil uil-arrow-circle-right diplomes__modal-icon"></i>
+                                    <p>SISR : Solutions d'Infrastructure, Systèmes et Réseau.</p>
+                                </li>
+                                <!-- Deuxieme point -->
+                                <li class="diplomes__modal-diplome">
+                                    <i class="uil uil-arrow-circle-right diplomes__modal-icon"></i>
+                                    <p>Administration des systèmes et du réseau.</p>
+                                </li>
+                                <!-- Troisieme point -->
+                                <li class="diplomes__modal-diplome">
+                                    <i class="uil uil-arrow-circle-right diplomes__modal-icon"></i>
+                                    <p>Conception, installation, déploiement infrastructure réseau.</p>
+                                </li>
+                                <!-- Quatrieme point -->
+                                <li class="diplomes__modal-diplome">
+                                    <i class="uil uil-arrow-circle-right diplomes__modal-icon"></i>
+                                    <p>Modifier, adapter les solutions d'infrastructure.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==== SECTION STAGE ====-->
+        <section class="stage section" id="stage">
+            <h2 class="section__title">Stage</h2>
+            <span class="section__subtitle">Mes stages</span>
+            
+
+            <div class="stage__container">
+                <div class="caseFirstYear">
+                    <!-- image de fond -->
+                    <div class="banner-img"><img src="assets/img/stage/font_stage1.png" alt="background-img"></div>
+                    <!-- logo entreprise -->
+                    <img src="assets/img/stage/logo-latoilegauloise.png" alt="logoLaToileGauloise" class="logo_stage1">
+                    <!-- Nom entreprise -->
+                    <h2 class="title_stage1">La Toile Gauloise</h2>
+                    <!-- Description entreprise -->
+                    <p class="desc_stage1">Stage de première année, <br> d'une durée de 7 semaines...</p>
+                    <!-- Bouton decouvrir stage1 -->
+                    <a href="" target="_blank"><button class="discover_stage1" type="button">Découvrir</button></a>
+                </div>
+                <div class="caseSecondYear">
+                    <!-- Image de fond -->
+                    <div class="banner-img"><img src="assets/img/stage/font_stage2.png" alt="background-img"></div>
+                    <!-- logo entreprise -->
+                    <img src="assets/img/stage/logo-elixircreation.png" alt="logoElixirCreation" class="logo_stage2">
+                    <!-- Nom entreprise -->
+                    <h2 class="title_stage2">Elixir Création</h2>
+                    <!-- Description entreprise -->
+                    <p class="desc_stage2">Stage de seconde année, <br> d'une durée de 6 semaines...</p>
+                    <!-- Bouton decouvrir stage1 -->
+                    <a href="" target="_blank"><button class="discover_stage2" type="button">Découvrir</button></a>
+                </div>
+            </div>
+        </section>
+        <!--==== SECTION PROJETS ====-->
+        <section class="projet section" id="projet">
+            <!-- Integration titre et sous-titre -->
+            <h2 class="section__title">Projets</h2>
+            <span class="section__subtitle">Mes projets</span>
+
+            <div class="projet__container container swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!--==== Projet 1 ====-->
+                    <div class="projet__content grid swiper-slide">
+                        <!-- Integration image projet 1-->
+                        <img src="assets/img/projets/asc.png" alt="" class="projet__img"><!-- Voir pour mettre une video anime a la place -->
+
+                        <div class="projet__data">
+                            <h3 class="projet__title">ASC - Chantemerle</h3>
+                            <p class="projet__description">Premier projet, réalisé pour le club de basket Chantemerle-les-Blés</p>
+                            <!-- Integration bouton pour voir le projet -->
+                            <a href="https://ascchantemerle.000webhostapp.com/" target="_blank" class="button button--flex button--small projet__button">
+                                Voir
+                                <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--==== Projet 2 ====-->
+                    <div class="projet__content grid swiper-slide">
+                        <!-- Integration image projet 1-->
+                        <img src="assets/img/projet-img.jpg" alt="" class="projet__img"><!-- Voir pour mettre une video anime a la place -->
+
+                        <div class="projet__data">
+                            <h3 class="projet__title">Portfolio</h3>
+                            <p class="projet__description">Projet réalisé pour me présenter</p>
+                            <!-- Integration bouton pour voir le projet -->
+                            <a href="#" class="button button--flex button--small projet__button">
+                                Voir
+                                <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Arrows -->
+                <div class="swiper-button-next">
+                    <i class="uil uil-angle-right-b swiper-projet-icon"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="uil uil-angle-left-b swiper-projet-icon"></i>
+                </div>
+            </div>
+        </section>
+        <!--==== SECTION CONTACT ME ====--> <!-- Contient des donnees sensibles a adapter ulterieurement-->
+        <section class="contact section" id="contact">
+            <!-- Integration titre et sous-titre -->
+            <h3 class="section__title">Contact</h3>
+            <span class="section__subtitle">Contactez-moi</span>
+            <!-- Integration moyen de contact -->
+            <div class="contact__container container grid">
+                <div>
+                    <!-- Integration 1 Case -->
+                    <div class="contact__information">
+                        <!-- Integration icone telephone -->
+                        <i class="uil uil-phone-alt contact__icon"></i>
+                        <!-- Integration titre + numero telephone -->
+                        <div>
+                            <h3 class="contact__title">Téléphone</h3>
+                            <span class="contact__subtitle">07-67-80-92-14</span>
+                        </div>
+                    </div>
+                    <!-- Integration 2 Case -->
+                    <div class="contact__information">
+                        <i class="uil uil-envelope-alt contact__icon"></i>
+                        <!-- Integration titre + numero telephone -->
+                        <div>
+                            <h3 class="contact__title">Mail</h3>
+                            <span class="contact__subtitle">contact.avet@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <!--==== INTEGRATION FORMULAIRE ====-->
+                <form action="index.php" class="contact__form grid" method="POST">   
+                    <div class="contact__inputs grid">
+                        <!-- Integration label nom et saisie nom -->
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Nom</label>
+                            <input type="text" name="nom" class="contact__input" pattern="([A-Z])[a-z]+">
+                            <?php if(isset($nomerror) & !empty($nomerror)) {echo "<p class='alert alert-danger'>".$nomerror."</p>";} ?> <!-- SI LE CHAMP EST VIDE CELA MET UN MESSAGE D'ERREUR -->
+                        </div>
+                        <!-- Integration label Email et saisie Email -->
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Prénom</label>
+                            <input type="text" name="prenom" class="contact__input" pattern="([A-Z])[a-z]+">
+                            <?php if(isset($prenomerror) & !empty($prenomerror)) {echo "<p class='alert alert-danger'>".$prenomerror."</p>";} ?> <!-- SI LE CHAMP EST VIDE CELA MET UN MESSAGE D'ERREUR -->
+                        </div>
+                        </div>
+                        <!-- Integration label objet et saisie de l'objet -->
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Email</label>
+                            <input type="email" name="email" class="contact__input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            <?php if(isset($emailerror) & !empty($emailerror)) {echo "<p class='alert alert-danger'>".$emailerror."</p>";} ?> <!-- SI LE CHAMP EST VIDE CELA MET UN MESSAGE D'ERREUR -->
+                        </div>
+                        <!-- Integration label message et saisie du message -->
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Message</label>
+                            <textarea name="message" id="" cols="0" rows="7" class="contact__input-animation"></textarea>
+                            <?php if(isset($messageerror) & !empty($messageerror)) {echo "<p class='alert alert-danger'>".$messageerror."</p>";} ?> <!-- SI LE CHAMP EST VIDE CELA MET UN MESSAGE D'ERREUR -->
+                        </div>
+                        <!-- Integration message success envoie mail -->
+                        <div>
+                            <?php
+                                if(isset($success) & !empty($success)){
+                                    echo "<p class='alert alert-success'>".$success."</p>";
+                                }
+                            ?>
+                        </div>
+                        <!-- Integration du bouton envoyer -->
+                        <div>
+                            <button class="button button--flex" style="border:0px; cursor:pointer; font-size: 1rem;" type="submit">Envoyer un message<i class="uil uil-message button__icon"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!--==== FOOTER ====-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <!-- Integration nom + profession -->
+                <div>
+                    <h1 class="footer__title">Tanguy</h1>
+                    <span class="footer__subtitle">Etudiant</span>
+                </div>
+                <!-- Integration lien redirection des sections -->
+                <ul class="footer__links">
+                    <li>
+                        <a href="#home" class="footer__link">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="footer__link">A Propos de moi</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="footer__link">Contactez-moi !</a>
+                    </li>
+                </ul>
+                <!-- Integration reseaux sociaux -->
+                <div class="footer__socials">
+                    <!-- Integration snapchat -->
+                    <a href="https://www.snapchat.com/add/tanguy.av?share_id=REZCODAwQkQtQTI3Qi00MDY5LTg3NzUtNDkyMzE0NkNDREEx&locale=fr_FR" target="_blank" class="footer__social">
+                        <i class="uil uil-snapchat-ghost"></i>
+                    </a>
+                    <!-- Integration instagram -->
+                    <a href="https://www.instagram.com/tanguy.av/?hl=fr" target="_blank" class="footer__social">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <!-- Integration github -->
+                    <a href="https://github.com/Q4zerr/" target="_blank" class="footer__social">
+                        <i class="uil uil-github"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Integration droits d'auteur -->
+            <p class="footer__rights">&#169; 2022 Tanguy AVET</p>
+        </div>
+    </footer>
+    <!--==== SCROLL TOP ====-->
+    <!-- <a href="#" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a> -->
+    <div id="progress">
+        <span id="progress-value">&#x1F815;</span>
+    </div>
+    <!-- Integration typed.js pour animation texte -->
+    <script src="assets/js/typed.js@2.0.12"></script>
+    <!-- Swiper JS -->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- Lien avec le fichier main javascript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
