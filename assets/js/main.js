@@ -123,6 +123,28 @@ modalCloses.forEach((modalClose) =>{
         })
     })
 })
+/*==== STAGE MODAL ====*/
+const modalStageViews = document.querySelectorAll('.stages__modal'),
+      modalStageBtns = document.querySelectorAll('.stages__button'),
+      modalStageCloses = document.querySelectorAll('.stages__modal-close')
+
+let modalStage = function(modalClick){
+    modalStageViews[modalClick].classList.add('stages__active-modal')
+}
+
+modalStageBtns.forEach((modalStageBtn, i) =>{
+    modalStageBtn.addEventListener('click', () =>{
+        modalStage(i)
+    })
+})
+
+modalStageCloses.forEach((modalStageClose) => {
+    modalStageClose.addEventListener('click', () =>{
+        modalStageViews.forEach((modalStageView) => {
+            modalStageView.classList.remove('stages__active-modal')
+        })
+    })
+})
 
 /*==== SWIPER PROJET ====*/
 let swiper = new Swiper('.projet__container', {
