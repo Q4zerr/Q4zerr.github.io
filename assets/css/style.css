@@ -1046,7 +1046,7 @@ img{
 .stages__modal-content{
     position: relative;
     background-color: var(--container-color);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: .5rem;
 }
 .stages__modal-title{
