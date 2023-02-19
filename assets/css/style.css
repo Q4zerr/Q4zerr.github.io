@@ -715,7 +715,7 @@ img{
 .skills__php{
     width: 60%;
 }
-.skills_java{
+.skills__java{
     width: 50%;
 }
 .skills__xml{
@@ -744,7 +744,7 @@ img{
 .skills__laragon{
     width: 70%;
 }
-.skills_phpmyadmin{
+.skills__phpmyadmin{
     width: 70%;
 }
 
