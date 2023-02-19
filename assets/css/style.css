@@ -694,36 +694,45 @@ img{
 /*STYLISATION BARRE SELON LES LANGUAGES*/
 /*Languages premiere competence*/
 .skills__html{
-    width: 75%;
+    width: 90%;
 }
 .skills__css{
-    width: 70%;
+    width: 85%;
 }
 .skills__js{
-    width: 50%;
+    width: 65%;
 }
-.skills__jquery{
+.skills__bootstrap{
     width: 30%;
 }
 /*Languages deuxieme competence*/
 .skills__c{
-    width: 85%;
+    width: 80%;
 }
 .skills__python{
-    width: 40%;
+    width: 30%;
 }
 .skills__php{
+    width: 60%;
+}
+.skills_java{
+    width: 50%;
+}
+.skills__xml{
     width: 30%;
 }
 /*Languages troisieme competence*/
+.skills__blender{
+    width: 25%;
+}
 .skills__pixlr{
     width: 30%;
 }
 .skills__canva{
-    width: 50%;
+    width: 60%;
 }
 .skills__figma{
-    width: 70%;
+    width: 80%;
 }
 /*Languages quatrieme competence*/
 .skills__mysql{
@@ -733,7 +742,10 @@ img{
     width: 70%;
 }
 .skills__laragon{
-    width: 60%;
+    width: 70%;
+}
+.skills_phpmyadmin{
+    width: 70%;
 }
 
 /*Skills Close*/
