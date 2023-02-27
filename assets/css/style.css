@@ -1061,7 +1061,8 @@ img{
     height: 70%;
     padding: 2rem;
     border-radius: .5rem;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .stages__modal-title{
     font-size: var(--h3-font-size);
