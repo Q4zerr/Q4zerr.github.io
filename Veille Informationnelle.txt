@@ -1,0 +1,25 @@
+Définition d'une veille informationnelle :
+
+La veille informationnelle est la surveillance permanente de l'environnement de son activité. La veille informationnelle est désormais indispensable et permet d'être tenu au courant de toutes les évolutions concernant son domaine de travail.
+
+Les sujets de ma veille informationnelle :
+
+- Le design web
+- Les intelligences artificielles
+- Les bonnes pratiques de certains langages
+- Les techniques de design en css
+- Les technologies tendances
+- La modélisation 3D
+- Les nouveautés Figma
+
+Comment j'analyse les informations de ma veille informationnelle ?
+
+Je passe beaucoup de temps par jour à regarder des informations sur le domaine du développement, si je vois des éléments importants qui pourrait éventuellement m'être utile alors je les met de côté. Sur Instagram j'enregistre simplement le poste, sur YouTube j'ai une playlist dédié au code. Pour pinterest je sauvegarde rarement les liens je fais uniquement des recherches en fonction des besoins que j'ai.
+Pour l'outil CodePen je fais mes recherches lorsque je ne sais pas comment créer un élément, cette outil m'aide surtout au niveau technique.
+
+Les outils pour ma veille informationnelle :
+
+- YouTube
+- Instagram
+- Pinterest
+- CodePen
