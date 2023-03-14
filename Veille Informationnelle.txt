@@ -11,11 +11,7 @@ Les sujets de ma veille informationnelle :
 - Les technologies tendances
 - La modélisation 3D
 - Les nouveautés Figma
-
-Comment j'analyse les informations de ma veille informationnelle ?
-
-Je passe beaucoup de temps par jour à regarder des informations sur le domaine du développement, si je vois des éléments importants qui pourrait éventuellement m'être utile alors je les met de côté. Sur Instagram j'enregistre simplement le poste, sur YouTube j'ai une playlist dédié au code. Pour pinterest je sauvegarde rarement les liens je fais uniquement des recherches en fonction des besoins que j'ai.
-Pour l'outil CodePen je fais mes recherches lorsque je ne sais pas comment créer un élément, cette outil m'aide surtout au niveau technique.
+- Les challenges de développement
 
 Les outils pour ma veille informationnelle :
 
@@ -23,3 +19,9 @@ Les outils pour ma veille informationnelle :
 - Instagram
 - Pinterest
 - CodePen
+- Forum
+
+Comment j'analyse les informations de ma veille informationnelle ?
+
+Je passe beaucoup de temps par jour à regarder des informations sur le domaine du développement, si je vois des éléments importants qui pourrait éventuellement m'être utile alors je les met de côté. Sur Instagram j'enregistre simplement le poste, sur YouTube j'ai une playlist dédié au code. Pour pinterest je sauvegarde rarement les liens je fais uniquement des recherches en fonction des besoins que j'ai.
+Pour l'outil CodePen je fais mes recherches lorsque je ne sais pas comment créer un élément, cette outil m'aide surtout au niveau technique.

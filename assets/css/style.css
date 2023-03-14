@@ -1201,7 +1201,72 @@ img{
 .swiper-button-next{
     outline: none;
 }
-
+/*==== SECTION VEILLE ====*/
+.veille__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.veille__container .veille__case{
+    padding: 1rem 0.75rem;
+    background-color: var(--container-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.veille__container .veille__align{
+    align-items: center;
+}
+.veille__container .veille__case .veille__subject{
+    font-weight: var(--font-semi-bold);
+    font-size: var(--normal-font-size);
+}
+.veille__container .veille__case .veille__text{
+    margin-top: 0.5rem;
+    font-size: var(--small-font-size);
+}
+.veille__container .veille__case .list__subject{
+    margin-top: 0.5rem;
+}
+.veille__container .veille__case .list__subject li{
+    font-size: var(--small-font-size);
+    margin-bottom: 0.15rem;
+}
+.veille__container .veille__case .list__subject li i{
+    font-size: var(--normal-font-size);
+    color: var(--first-color-alt);
+    margin-right: 0.15rem;
+}
+.veille__container .veille__case .list__tools{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+.veille__container .veille__case .list__tools li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.veille__container .veille__case .list__tools li img{
+    width: 225px;
+    height: auto;
+}
+.veille__container .veille__case .list__tools li span{
+    cursor: default;
+}
+/*==== SECTION VEILLE ====*/
 /*==== SECTION CONTACT ====*/
 /*Stylisation erreur dans le formulaire*/
 .contact__content .alert-danger{
@@ -1428,7 +1493,13 @@ img{
         padding: 0 .5rem;
     }
 }
-
+/*Personal*/
+@media screen and (max-width: 500px){
+    .veille__container .veille__case{
+        margin-right: 1rem !important;
+        margin-left: 1rem !important;
+    }
+}
 /*Medium devices*/
 @media screen and (min-width: 568px){
     .home__content{
