@@ -1066,7 +1066,10 @@ img{
     overflow-x: hidden;
 }
 .stages__modal-content .stages__part{
-    
+    font-weight: var(--font-semi-bold);
+}
+.stages__modal-content p{
+    margin-top: 1rem;
 }
 .stages__modal-title{
     font-size: var(--h3-font-size);
@@ -1150,7 +1153,6 @@ img{
 .caseSecondYear .discover_stage2:hover::before{
     width: 100%;
 }
-
 /*==== SECTION PROJETS ====*/
 .projet__container{
     overflow: initial;
@@ -1248,7 +1250,8 @@ img{
 }
 .veille__container .veille__case .list__tools{
     margin-top: 0.5rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
@@ -1498,6 +1501,13 @@ img{
     .veille__container .veille__case{
         margin-right: 1rem !important;
         margin-left: 1rem !important;
+    }
+    .veille__container .veille__case .list__tools{
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .veille__container .veille__case .list__tools li img{
+        width: 125px !important;
     }
 }
 /*Medium devices*/
