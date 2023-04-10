@@ -582,8 +582,9 @@ img{
     align-self: center;
 } */
 .about__blob-img{
-    width: 170px;
+    width: 350px;
     height: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.25));
 }
 /*Image quand le modal about est ouvert*/
 .img__modal{
@@ -680,7 +681,7 @@ img{
 /*Stylisation de la barre de niveau des languages*/
 .skills__bar,
 .skills__percentage{
-    height: 5px;
+    height: 3px;
     border-radius: .25rem;
 }
 
@@ -694,7 +695,7 @@ img{
 }
 /*STYLISATION BARRE SELON LES LANGUAGES*/
 /*Languages premiere competence*/
-.skills__html{
+/* .skills__html{
     width: 90%;
 }
 .skills__css{
@@ -707,7 +708,7 @@ img{
     width: 30%;
 }
 /*Languages deuxieme competence*/
-.skills__c{
+/* .skills__c{
     width: 80%;
 }
 .skills__python{
@@ -721,9 +722,9 @@ img{
 }
 .skills__xml{
     width: 30%;
-}
+} */
 /*Languages troisieme competence*/
-.skills__blender{
+/* .skills__blender{
     width: 25%;
 }
 .skills__pixlr{
@@ -734,9 +735,9 @@ img{
 }
 .skills__figma{
     width: 80%;
-}
+} */
 /*Languages quatrieme competence*/
-.skills__mysql{
+/* .skills__mysql{
     width: 70%;
 }
 .skills__sql{
@@ -747,7 +748,7 @@ img{
 }
 .skills__phpmyadmin{
     width: 70%;
-}
+} */
 
 /*Skills Close*/
 .skills__close .skills__list{
