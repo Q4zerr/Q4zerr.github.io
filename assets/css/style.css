@@ -664,7 +664,7 @@ img{
 
 /*Stylisation de la liste des languages des competences pour les centrer par rapport au nom des competences*/
 .skills__list{
-    row-gap: 1.5rem;
+    row-gap: 0.75rem;
     padding-left: 2.7rem;
 }
 /*Stylisation des languages dans les competences*/
