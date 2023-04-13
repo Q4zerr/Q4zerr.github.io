@@ -1073,6 +1073,11 @@ img{
 }
 .stages__modal-content .stages__part{
     font-weight: var(--font-semi-bold);
+    font-size: var(--normal-font-size);
+}
+.stages__modal-content .stages__subpart{
+    font-weight: var(--font-semi-bold);
+    font-size: var(--small-font-size);
 }
 .stages__modal-content p{
     margin-top: 1rem;
