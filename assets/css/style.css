@@ -87,6 +87,7 @@ header{
     background-color: var(--white-color);
     transition: all .3s;
     position: relative;
+    z-index: 10;
 }
 .nav .nav-btn span+span{
     margin-top: 5.88px;
@@ -112,15 +113,42 @@ header{
     animation: ease .7s bottom-2 forwards;
 }
 .nav .nav-btn .nav-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: var(--first-color);
     display: none;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     flex-direction: column;
     list-style: none;
+    z-index: 9;
+    gap: 1rem;
+}
+.nav .nav-btn.active .nav-menu{
+    display: flex;
+    animation: fadeMenu .7s ease-in-out forwards;
 }
 .nav .nav-btn .nav-menu li a{
+    position: relative;
     text-decoration: none;
     color: var(--white-color);
+    font-size: 1.5rem;
+}
+.nav .nav-btn .nav-menu li a:hover::after{
+    width: 100%;
+}
+.nav .nav-btn .nav-menu li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--white-color);
+    transition: width .3s ease;
 }
 .nav .nav-links ul{
     display: flex;
@@ -244,6 +272,7 @@ header{
 }
 .home .title .subtitle,
 .home .title .date{
+    text-align: center;
     font-size: var(--fs-l);
     font-weight: var(--fw-light);
 }
@@ -1352,6 +1381,30 @@ main .home-service{
 		opacity: 0;
 	}
 }
+@keyframes fadeMenu{
+    0%{
+        transform: translateX(50vw);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes fadeMenu450{
+    0%{
+        transform: translateX(70vw);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes fadeMenu300{
+    0%{
+        transform: translateX(100vw);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
 /*KEYFRAMES*/
 /*MEDIA QUERIES*/
 @media screen and (max-width: 1659px){
@@ -1623,6 +1676,10 @@ main .home-service{
     .benefit-f .content .sharp img{
         width: 340px;
     }
+    .nav .nav-btn.active .nav-menu{
+        width: 70vw;
+        animation: fadeMenu450 .7s ease-in-out forwards;
+    }
 }
 @media screen and (max-width: 350px){
     .about .grid-img{
@@ -1708,6 +1765,10 @@ main .home-service{
     }
     .home-about .title a, .home-service .title a, .home-achievement .title a{
         padding: 1.25rem 3rem;
+    }
+    .nav .nav-btn.active .nav-menu{
+        width: 100vw;
+        animation: fadeMenu300 .7s ease-in-out forwards;
     }
 }
 /*MEDIA QUERIES*/
