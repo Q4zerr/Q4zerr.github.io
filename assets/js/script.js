@@ -70,6 +70,18 @@ const swiper = new Swiper('.swiper', {
         1850: {
             slidesPerView: 3,
             spaceBetween: 0
+        },
+        900: {
+            spaceBetween: 50
+        },
+        760: {
+          slidesPerView: 3
+        },
+        500: {
+          slidesPerView: 1
+        },
+        100: {
+          slidesPerView: 1
         }
     }
 });

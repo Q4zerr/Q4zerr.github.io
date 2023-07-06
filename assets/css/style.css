@@ -1490,7 +1490,7 @@ main .home-service{
         grid-template-columns: repeat(2, 1fr);
     }
     .achievement .swiper{
-        width: 90%;
+        width: 100%;
     }
     footer .informations{
         gap: 4rem;
@@ -1563,6 +1563,13 @@ main .home-service{
     }
     .achievement-filtre .portfolio .images{
         columns: 2 auto;
+    }
+}
+@media screen and (max-width: 760px){
+    .achievement .swiper .swiper-wrapper .swiper-slide-active,
+    .achievement .swiper .swiper-wrapper .swiper-slide-next + .swiper-slide{
+        transform: scale(1);
+        filter: blur(0);
     }
 }
 @media screen and (max-width: 670px){
