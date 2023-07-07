@@ -1701,6 +1701,10 @@ main .home-service{
         width: 100%;
         padding: 1rem 0;
     }
+    .contact .contact-form form{
+        width: 100%;
+        padding: 1rem;
+    }
 }
 @media screen and (max-width: 350px){
     .about .grid-img{
