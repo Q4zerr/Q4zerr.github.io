@@ -34,6 +34,7 @@ html{
 body{
     height: auto;
     font-family: var(--poppins);
+    background-color: var(--first-color);
 }
 /*GLOBAL STYLISATION*/
 /*HEADER*/
@@ -1706,7 +1707,7 @@ main .home-service{
         width: auto !important;
     }
     .nav{
-        padding: 1rem 1.5rem;
+        padding: 1rem;
     }
     .nav .nav-logo{
         gap: 0.5rem;
@@ -1737,6 +1738,15 @@ main .home-service{
     }
     .benefit-slider .swiper .slide .img{
         min-width: 100px;
+    }
+    .contact .contact-form{
+        padding: 1rem;
+    }
+    .home-about .title span:first-child, .home-service .title span:first-child, .home-achievement .title span:first-child{
+        font-size: var(--fs-xl);
+    }
+    .home-about .title .subtitle, .home-about .title .date, .home-service .title .subtitle, .home-achievement .title .subtitle{
+        font-size: var(--fs-navbar);
     }
 }
 @media screen and (max-width: 300px){
