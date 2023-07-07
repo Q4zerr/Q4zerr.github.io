@@ -24,7 +24,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
 }
 /*RESET*/
 /*GLOBAL STYLISATION*/
@@ -537,6 +536,8 @@ header{
 /*ACHIEVEMENT*/
 /*CONTACT*/
 .contact{
+    max-width: 100vw;
+    overflow: hidden;
     height: 100vh;
     min-height: 880px;
     background-color: var(--second-color);
