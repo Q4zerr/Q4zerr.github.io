@@ -1694,6 +1694,13 @@ main .home-service{
         width: 70vw;
         animation: fadeMenu450 .7s ease-in-out forwards;
     }
+    .contact{
+        padding: 6rem 1rem;
+    }
+    .contact .contact-form{
+        width: 100%;
+        padding: 1rem 0;
+    }
 }
 @media screen and (max-width: 350px){
     .about .grid-img{
@@ -1740,9 +1747,6 @@ main .home-service{
     .benefit-slider .swiper .slide .img{
         min-width: 100px;
     }
-    .contact .contact-form{
-        padding: 1rem;
-    }
     .home-about .title span:first-child, .home-service .title span:first-child, .home-achievement .title span:first-child{
         font-size: var(--fs-xl);
     }
@@ -1775,9 +1779,6 @@ main .home-service{
     .contact .contact-info .img img{
         width: 250px;
         height: auto;
-    }
-    .contact .contact-form{
-        padding: 1rem 0.5rem;
     }
     .achievement .achievement-btn{
         padding: 1rem 2.5rem;
