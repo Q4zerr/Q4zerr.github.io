@@ -24,6 +24,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: 1px solid red;
 }
 /*RESET*/
 /*GLOBAL STYLISATION*/
@@ -566,6 +567,9 @@ header{
 }
 .contact .contact-info .informations .info i{
     font-size: var(--fs-l);
+}
+.contact .contact-info .informations .info span{
+    text-decoration: none;
 }
 .contact .contact-info .social{
     display: flex;
@@ -1158,6 +1162,7 @@ main .home-service{
     color: var(--white-color);
     text-decoration: none;
     transition: background-color .3s ease, color .3s ease;
+    white-space: nowrap;
 }
 .benefit-f .content .text a:hover{
     background-color: var(--white-color);
