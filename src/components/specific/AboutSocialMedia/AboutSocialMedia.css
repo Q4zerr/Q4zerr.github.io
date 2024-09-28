@@ -1,0 +1,102 @@
+.about-social-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+.about-social-bar .about-social-canvas {
+  position: relative;
+  margin: 0 0.5rem;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.about-social-bar .about-social-canvas .btn-social {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 1.25rem;
+  bottom: 0;
+  color: var(--white);
+  font-size: var(--fs-size-medium);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.25s;
+  z-index: 1;
+}
+.about-social-bar .about-social-canvas .btn-social p {
+  position: relative;
+  transition: 0.25s;
+  z-index: 1;
+}
+.about-social-bar .about-social-canvas .btn-social .btn-social-background {
+  background: var(--gradient-linear-primary);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.25s;
+  z-index: 0;
+}
+.about-social-bar .about-social-canvas .btn-social-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--gradient-linear-primary);
+  height: 80%;
+  width: 80%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: 0.25s;
+  z-index: 0;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+.about-social-bar .about-social-canvas .btn-social-info {
+  position: absolute;
+  top: 120%;
+  border-radius: 0.625rem;
+  color: var(--white) !important;
+  font-family: var(--font-rubik);
+  font-size: var(--fs-size-small);
+  font-weight: var(--light);
+  left: 50%;
+  opacity: 0;
+  padding: 0.3rem 1.25rem;
+  pointer-events: none;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: 0.25s;
+  z-index: 1;
+}
+.about-social-bar .about-social-canvas:hover .btn-social {
+  bottom: 5px;
+}
+.about-social-bar .about-social-canvas:hover .btn-social p {
+  color: var(--black);
+}
+.about-social-bar .about-social-canvas:hover .btn-social .btn-social-background {
+  opacity: 1;
+}
+.about-social-bar .about-social-canvas:hover .btn-social-glow {
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+  opacity: 0.5;
+}
+.about-social-bar .about-social-canvas:hover .btn-social-info {
+  top: 125%;
+  opacity: 1;
+}
+@media screen and (max-width: 1200px) {
+  .about-social-bar .about-social-canvas .btn-social {
+    border-radius: 1rem;
+    font-size: var(--fs-xbase);
+  }
+}

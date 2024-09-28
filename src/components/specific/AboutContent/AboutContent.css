@@ -1,0 +1,30 @@
+.about-content {
+  width: 50%;
+  height: calc(100vh - 160px);
+  margin-top: 3.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.about-content .about-content-size {
+  width: 590px;
+}
+@media screen and (max-width: 1440px) {
+  .about-content .about-content-size {
+    width: 540px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .about-content .about-content-size {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .about-content {
+    width: 80%;
+  }
+  .about-content .about-content-size {
+    width: 100%;
+  }
+}

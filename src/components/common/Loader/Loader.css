@@ -1,0 +1,134 @@
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  min-height: 440px;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background-color: var(--black);
+  z-index: 9997;
+}
+.loader.disabled {
+  animation: disapearLoader 2s ease-out forwards 1s;
+}
+.loader.disabled .loader-container svg,
+.loader.disabled .loader-container .logo_loader {
+  animation: disapearLoader 1s ease-out forwards;
+}
+.loader .loader-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  z-index: 9998;
+}
+.loader .loader-container .logo_loader {
+  animation: appearLogoLoader 1.2s ease-out forwards 1.2s;
+  opacity: 0;
+}
+@-webkit-keyframes disapearLoader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -9998;
+  }
+}
+
+@keyframes disapearLoader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -9998;
+  }
+}
+@-webkit-keyframes appearLogoLoader {
+  0% {
+    transform: translateY(-400px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes appearLogoLoader {
+  0% {
+    transform: translateY(-400px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 806.6531372070312px;
+    stroke-dasharray: 806.6531372070312px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 806.6531372070312px;
+  }
+}
+
+@keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 806.6531372070312px;
+    stroke-dasharray: 806.6531372070312px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 806.6531372070312px;
+  }
+}
+
+.svg-elem-1 {
+  -webkit-animation: animate-svg-stroke-1 1s ease-out 2.8s both;
+  animation: animate-svg-stroke-1 1s ease-out 2.8s both;
+}
+@media screen and (max-width: 650px) {
+  .loader .loader-container {
+    gap: 2rem;
+  }
+  .loader-container .logo_loader {
+    width: 250px;
+  }
+  .loader-container svg {
+    width: 223px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .loader .loader-container {
+    gap: 1rem;
+  }
+  .loader-container .logo_loader {
+    width: 200px;
+  }
+  .loader-container svg {
+    width: 173px;
+  }
+}

@@ -1,0 +1,35 @@
+.contact {
+  position: relative;
+  padding: 3.125rem 0;
+  padding-top: 18.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact .contact-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact .contact-container .ct-deco {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact .contact-container .ct-deco .about-social-bar {
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 768px) {
+  .contact .contact-container .ct-deco {
+    display: none;
+  }
+}

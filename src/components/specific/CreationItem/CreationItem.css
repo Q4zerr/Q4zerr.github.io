@@ -1,0 +1,99 @@
+.creations-article {
+  display: flex;
+  position: relative;
+}
+.creations-article:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+.creations-article .creations-link-container {
+  position: relative;
+  text-align: right;
+  width: 30%;
+}
+.creations-link-container .creations-name-container {
+  position: relative;
+}
+.creations-link-container .creations-name-container .creations-link {
+  position: relative;
+  display: inline-block;
+  z-index: 11;
+}
+.creations-name-container .creations-link .creations-name {
+  transition: 0.3s ease-out;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px var(--white);
+  color: transparent;
+  display: inline-block;
+  font-size: var(--fs-size-xlmedium);
+  font-family: var(--font-tusker-grotesk);
+}
+.creations-name-container .creations-link .creations-name.hover {
+  color: var(--white);
+  -webkit-text-stroke: 1px transparent;
+}
+.creations-name-container .creations-technos-container {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+}
+.creations-name-container .creations-technos-container .creations-technos {
+  position: relative;
+  white-space: nowrap;
+  font-size: var(--fs-size-xsmall);
+  color: var(--white);
+  font-family: var(--font-rubik);
+  text-overflow: ellipsis;
+}
+.creations-technos {
+  transform: translate(0px, -20px);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.creations-technos.hover {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.creations-article .creations-link-container .creations-preview {
+  display: block;
+  width: 220%;
+  max-width: 220%;
+  transform: scale(0.6);
+  transform-origin: 0 0;
+  position: absolute;
+  top: -30px;
+  right: -230%;
+  bottom: auto;
+  left: auto;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 2px solid var(--white);
+}
+@media screen and (max-width: 1200px) {
+  .creations-article .creations-link-container .creations-preview {
+    width: 300%;
+    max-width: 300%;
+    right: -310%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .creations-article .creations-link-container .creations-preview {
+    display: none;
+  }
+  .creations-link-container .creations-name-container {
+    text-align: left;
+  }
+  .creations-name-container .creations-technos-container {
+    right: auto;
+  }
+  .creations-name-container .creations-link .creations-name {
+    font-size: var(--fs-size-xmedium);
+  }
+  .creations-article .creations-link-container {
+    width: 100%;
+  }
+}

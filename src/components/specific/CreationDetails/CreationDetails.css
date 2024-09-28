@@ -1,0 +1,125 @@
+/*MAIN*/
+.creations-details-section {
+  padding: var(--navbar-size) 9vw 0 9vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.project-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: calc(100vh - 22.5rem);
+  min-height: 300px;
+}
+/*SPECIFICITY*/
+.project-specificity {
+  padding: 7.5rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: row;
+  color: var(--white);
+  font-family: var(--font-rubik);
+}
+/*BUTTON*/
+.project-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+/*IMAGE*/
+.project-visuals {
+  min-height: 50vh;
+  height: 100%;
+  padding-top: 10vw;
+  padding-bottom: 2.5rem;
+  overflow: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-visuals .visuals-container {
+  max-width: 50vw;
+  width: 100%;
+  margin: 0 auto 5rem;
+}
+/*CREDITS*/
+.project-credits {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 3rem;
+  padding-bottom: 6.25rem;
+  padding-right: 0;
+  padding-left: 45%;
+  width: 100%;
+  color: var(--white);
+  font-family: var(--font-rubik);
+  font-weight: var(--light);
+}
+.project-credits .project-credits-title {
+  font-size: var(--fs-base);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.project-credits .project-credits-list {
+  display: table;
+  list-style: none;
+}
+/*NAVIGATION*/
+.project-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 3rem 0;
+}
+@media screen and (max-width: 1200px) {
+  .project-details {
+    gap: 0.5rem;
+  }
+}
+@media screen and (max-width: 980px) {
+  .creations-details-section {
+    padding: var(--navbar-size) 2vw 0 2vw;
+  }
+  .project-details-content .project-technos-container .project-content-technos {
+    white-space: wrap !important;
+  }
+  .project-visuals .visuals-container {
+    max-width: 60vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .project-details {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 650px) {
+  .project-specificity {
+    flex-direction: column;
+    padding: 4rem 0;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 580px) {
+  .project-visuals .visuals-container {
+    max-width: 80vw;
+  }
+  .project-credits {
+    padding-left: 0;
+    width: 80%;
+  }
+  .project-button {
+    margin-top: 2rem;
+  }
+}

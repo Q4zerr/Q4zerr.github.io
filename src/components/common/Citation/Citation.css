@@ -1,0 +1,61 @@
+.citation {
+  position: relative;
+  padding-bottom: 3.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-family: var(--font-rubik);
+  color: var(--white);
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+.swiper-slide .citation-quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+  max-width: 550px;
+}
+.swiper-slide .citation-quote-container .citation-quote {
+  font-size: var(--fs-size-medium);
+}
+.swiper-slide .citation-quote-container .citation-author {
+  font-size: var(--fs-xbase);
+  font-family: var(--font-tusker-grotesk);
+  letter-spacing: 0.1rem;
+  opacity: 0.75;
+}
+.swiper-pagination-bullet-active {
+  background: var(--secondary) !important;
+}
+.swiper-pagination-bullet {
+  background: var(--secondary) !important;
+}
+@media screen and (max-width: 768px) {
+  .swiper-slide .citation-quote-container .citation-quote {
+    font-size: var(--fs-xbase);
+  }
+  .swiper-slide .citation-quote-container .citation-author {
+    font-size: var(--fs-base);
+  }
+}
+@media screen and (max-width: 380px) {
+  .swiper-slide .citation-quote-container .citation-quote {
+    font-size: var(--fs-base);
+  }
+  .swiper-slide .citation-quote-container .citation-author {
+    font-size: var(--fs-size-small);
+  }
+}

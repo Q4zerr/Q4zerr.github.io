@@ -1,0 +1,10 @@
+.creations-list-container {
+  width: 80%;
+  margin-top: 6rem;
+}
+.creations-list-container .creations-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+}

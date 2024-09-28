@@ -1,0 +1,125 @@
+.contact-decoration {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  animation: float 4s ease-in-out infinite;
+}
+.contact-decoration .parallax-container:first-child {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.contact-decoration .contact-bubbles {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+}
+.contact-decoration .parallax {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.contact-decoration .contact-bubbles .ct-bubble {
+  position: absolute;
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  z-index: 10;
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+.contact-decoration .contact-bubbles .ct-bubble.logo {
+  left: 60%;
+  top: 72%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  z-index: 10;
+}
+.contact-decoration .contact-bubbles .ct-bubble.logo img {
+  height: 70%;
+  width: 70%;
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+  margin-top: 0.75rem;
+}
+.contact-decoration .contact-bubbles .ct-bubble.b1 {
+  height: 30px;
+  width: 30px;
+  top: 47%;
+  left: 66%;
+}
+.contact-decoration .contact-bubbles .ct-bubble.b2 {
+  height: 20px;
+  width: 20px;
+  top: 66%;
+  left: 34%;
+}
+.contact-decoration .contact-bubbles .ct-bubble.b3 {
+  height: 50px;
+  width: 50px;
+  top: 81%;
+  left: 42%;
+}
+.contact-decoration .contact-bubbles .ct-bubble.b4 {
+  height: 10px;
+  width: 10px;
+  top: 45%;
+  left: 30%;
+}
+.contact-decoration .contact-quote {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+.contact-decoration .contact-quote .quote-f,
+.contact-decoration .contact-quote .quote-s {
+  color: var(--white);
+  font-family: var(--font-tusker-grotesk);
+  white-space: nowrap;
+  font-size: var(--fs-size-xlarge);
+  letter-spacing: 0.1rem;
+  font-weight: var(--medium);
+}
+.contact-decoration .contact-quote .quote-s {
+  position: relative;
+}
+.contact-decoration .contact-quote .quote-s .glow {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  -webkit-text-fill-color: transparent;
+  background: var(--gradient-linear-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-filter: blur(50px);
+  filter: blur(50px);
+  opacity: 0.3;
+}
+.contact-decoration .contact-quote .quote-s span {
+  -webkit-text-fill-color: transparent;
+  background: var(--gradient-linear-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@media screen and (max-width: 1440px) {
+  .contact-decoration .contact-quote .quote-f,
+  .contact-decoration .contact-quote .quote-s {
+    font-size: var(--fs-size-large);
+  }
+  .contact-decoration {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .contact-decoration .contact-quote .quote-f,
+  .contact-decoration .contact-quote .quote-s {
+    font-size: var(--fs-size-slarge);
+  }
+}

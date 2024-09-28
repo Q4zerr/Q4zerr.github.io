@@ -1,0 +1,8 @@
+footer {
+  padding: 0 2rem 2rem 2rem;
+  font-family: var(--font-tusker-grotesk);
+  color: var(--white-60);
+  font-weight: var(--light);
+  font-size: var(--fs-base);
+  letter-spacing: 0.1rem;
+}

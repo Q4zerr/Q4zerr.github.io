@@ -1,0 +1,38 @@
+.object {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--white);
+  font-family: var(--font-rubik);
+  max-width: 270px;
+}
+.object .object-title {
+  font-size: var(--fs-base);
+  font-weight: var(--medium);
+}
+.object .object-subtitle {
+  display: inline-block;
+  font-size: var(--fs-size-small);
+  font-weight: var(--regular);
+  opacity: 0.9;
+}
+.object .object-calendar {
+  font-size: var(--fs-size-xsmall);
+  font-weight: var(--light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.7;
+}
+@media screen and (max-width: 768px) {
+  .object .object-title {
+    font-size: var(--fs-size-small);
+  }
+  .object .object-subtitle {
+    font-size: var(--fs-size-xsmall);
+  }
+  .object .object-calendar {
+    font-size: calc(var(--fs-size-xsmall) - 0.1rem);
+  }
+}

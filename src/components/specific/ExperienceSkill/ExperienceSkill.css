@@ -1,0 +1,281 @@
+.technology {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  transition: 0.25s;
+  flex-shrink: 0;
+  margin-bottom: 2rem;
+}
+.technology .technology-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.25rem;
+  backdrop-filter: blur(20px);
+  background-color: var(--black-30);
+  height: 60%;
+  width: 60%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: 0.25s;
+  z-index: 5;
+}
+.technology .technology-box .technology-img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  filter: invert(100%);
+}
+.technology .technology-gradient {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.25s;
+  z-index: 4;
+}
+.technology .technology-text {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 0.625rem 1.5625rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(25px);
+  background-color: var(--black-30);
+  font-family: var(--font-rubik);
+  font-size: var(--fs-base);
+  font-weight: var(--light);
+  color: var(--white);
+  transition: 0.25s;
+  white-space: nowrap;
+  vertical-align: middle;
+  z-index: 10;
+  opacity: 0;
+}
+.technology .technology-gradient::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-filter: blur(40px);
+  filter: blur(40px);
+  z-index: 3;
+  opacity: 0.25;
+  transition: 0.25s;
+}
+.technology .technology-gradient.php {
+  background: linear-gradient(225deg, #99daff 0.14%, #a966ff 99.86%);
+}
+.technology .technology-gradient.php::after {
+  background: linear-gradient(225deg, #99daff 0.14%, #a966ff 99.86%);
+}
+.technology .technology-gradient.react {
+  background: linear-gradient(225.22deg, #93ffff -0.09%, #59a5ff 100.01%);
+}
+.technology .technology-gradient.react::after {
+  background: linear-gradient(225.22deg, #93ffff -0.09%, #59a5ff 100.01%);
+}
+.technology .technology-gradient.js {
+  background: linear-gradient(45deg, #f1f097 0.14%, #fff649 99.86%);
+}
+.technology .technology-gradient.js::after {
+  background: linear-gradient(45deg, #f1f097 0.14%, #fff649 99.86%);
+}
+.technology .technology-gradient.lrvl {
+  background: linear-gradient(225deg, #f55f71 0.14%, #f89d93 99.86%);
+}
+.technology .technology-gradient.lrvl::after {
+  background: linear-gradient(225deg, #f55f71 0.14%, #f89d93 99.86%);
+}
+.technology .technology-gradient.py {
+  background: linear-gradient(45deg, #67b26f 0.14%, #4ca2cd 99.86%);
+}
+.technology .technology-gradient.py::after {
+  background: linear-gradient(45deg, #67b26f 0.14%, #4ca2cd 99.86%);
+}
+.technology .technology-gradient.java {
+  background: linear-gradient(225deg, #f2994a 0.14%, #f2c94c 99.86%);
+}
+.technology .technology-gradient.java::after {
+  background: linear-gradient(225deg, #f2994a 0.14%, #f2c94c 99.86%);
+}
+.technology .technology-gradient.ps {
+  background: linear-gradient(45deg, #5c62ca 0.14%, #8f94fb 99.86%);
+}
+.technology .technology-gradient.ps::after {
+  background: linear-gradient(45deg, #5c62ca 0.14%, #8f94fb 99.86%);
+}
+.technology .technology-gradient.spl {
+  background: linear-gradient(225deg, #12c2e9 0.14%, #c471ed 99.86%);
+}
+.technology .technology-gradient.spl::after {
+  background: linear-gradient(225deg, #12c2e9 0.14%, #c471ed 99.86%);
+}
+.technology .technology-gradient.pixlr {
+  background: linear-gradient(45deg, #be93c5 0.14%, #7bc6cc 99.86%);
+}
+.technology .technology-gradient.pixlr::after {
+  background: linear-gradient(45deg, #be93c5 0.14%, #7bc6cc 99.86%);
+}
+.technology .technology-gradient.blend {
+  background: linear-gradient(225deg, #ffe259 0.14%, #ffa751 99.86%);
+}
+.technology .technology-gradient.blend::after {
+  background: linear-gradient(225deg, #ffe259 0.14%, #ffa751 99.86%);
+}
+.technology .technology-gradient.fgma {
+  background: linear-gradient(45deg, #fbd3e9 0.14%, #bb377d 99.86%);
+}
+.technology .technology-gradient.fgma::after {
+  background: linear-gradient(45deg, #fbd3e9 0.14%, #bb377d 99.86%);
+}
+.technology .technology-gradient.csharp {
+  background: linear-gradient(225deg, #673ab7 0.14%, #512da8 99.86%);
+}
+.technology .technology-gradient.csharp::after {
+  background: linear-gradient(225deg, #673ab7 0.14%, #512da8 99.86%);
+}
+.technology .technology-gradient.canva {
+  background: linear-gradient(45deg, #9796f0 0.14%, #fbc7d4 99.86%);
+}
+.technology .technology-gradient.canva::after {
+  background: linear-gradient(45deg, #9796f0 0.14%, #fbc7d4 99.86%);
+}
+.technology .technology-gradient.scss {
+  background: linear-gradient(225deg, #f4c4f3 0.14%, #fc67fa 99.86%);
+}
+.technology .technology-gradient.scss::after {
+  background: linear-gradient(225deg, #f4c4f3 0.14%, #fc67fa 99.86%);
+}
+.technology .technology-gradient.rby {
+  background: linear-gradient(45deg, #cb2d3e 0.14%, #ef473a 99.86%);
+}
+.technology .technology-gradient.rby::after {
+  background: linear-gradient(45deg, #cb2d3e 0.14%, #ef473a 99.86%);
+}
+.technology .technology-gradient.pman {
+  background: linear-gradient(225deg, #f2994a 0.14%, #f2c94c 99.86%);
+}
+.technology .technology-gradient.pman::after {
+  background: linear-gradient(225deg, #f2994a 0.14%, #f2c94c 99.86%);
+}
+.technology .technology-gradient.unty {
+  background: linear-gradient(45deg, #283048 0.14%, #859398 99.86%);
+}
+.technology .technology-gradient.unty::after {
+  background: linear-gradient(45deg, #283048 0.14%, #859398 99.86%);
+}
+.technology .technology-gradient.wmp {
+  background: linear-gradient(225deg, #b24592 0.14%, #f15f79 99.86%);
+}
+.technology .technology-gradient.wmp::after {
+  background: linear-gradient(225deg, #b24592 0.14%, #f15f79 99.86%);
+}
+.technology .technology-gradient.sql {
+  background: linear-gradient(45deg, #1c92d2 0.14%, #f2fcfe 99.86%);
+}
+.technology .technology-gradient.sql::after {
+  background: linear-gradient(45deg, #1c92d2 0.14%, #f2fcfe 99.86%);
+}
+.technology .technology-gradient.ppadmin {
+  background: linear-gradient(225deg, #8b66b4 0.14%, #5a71b1 99.86%);
+}
+.technology .technology-gradient.ppadmin::after {
+  background: linear-gradient(225deg, #8b66b4 0.14%, #5a71b1 99.86%);
+}
+.technology .technology-gradient.pgsql {
+  background: linear-gradient(45deg, #457fca 0.14%, #5691c8 99.86%);
+}
+.technology .technology-gradient.pgsql::after {
+  background: linear-gradient(45deg, #457fca 0.14%, #5691c8 99.86%);
+}
+.technology .technology-gradient.msql {
+  background: linear-gradient(225deg, #f2994a 0.14%, #f2c94c 99.86%);
+}
+.technology .technology-gradient.msql::after {
+  background: linear-gradient(225deg, #f2994a 0.14%, #f2c94c 99.86%);
+}
+.technology .technology-gradient.wp {
+  background: linear-gradient(45deg, #00d2ff 0.14%, #3a7bd5 99.86%);
+}
+.technology .technology-gradient.wp::after {
+  background: linear-gradient(45deg, #00d2ff 0.14%, #3a7bd5 99.86%);
+}
+.technology .technology-gradient.oxy {
+  background: linear-gradient(225deg, #9d50bb 0.14%, #6e48aa 99.86%);
+}
+.technology .technology-gradient.oxy::after {
+  background: linear-gradient(225deg, #9d50bb 0.14%, #6e48aa 99.86%);
+}
+.technology .technology-gradient.divi {
+  background: linear-gradient(45deg, #8b66b4 0.14%, #5a71b1 99.86%);
+}
+.technology .technology-gradient.divi::after {
+  background: linear-gradient(45deg, #8b66b4 0.14%, #5a71b1 99.86%);
+}
+.technology .technology-gradient.shpfy {
+  background: linear-gradient(225deg, #11998e 0.14%, #38ef7d 99.86%);
+}
+.technology .technology-gradient.shpfy::after {
+  background: linear-gradient(225deg, #11998e 0.14%, #38ef7d 99.86%);
+}
+.technology .technology-gradient.elem {
+  background: linear-gradient(45deg, #ff416c 0.14%, #ff4b2b 99.86%);
+}
+.technology .technology-gradient.elem::after {
+  background: linear-gradient(45deg, #ff416c 0.14%, #ff4b2b 99.86%);
+}
+.technology .technology-gradient.ndejs {
+  background: linear-gradient(225deg, #67b26f 0.14%, #4ca2cd 99.86%);
+}
+.technology .technology-gradient.ndejs::after {
+  background: linear-gradient(225deg, #67b26f 0.14%, #4ca2cd 99.86%);
+}
+/*HOVER EFFECT*/
+.technology:hover .technology-box {
+  -webkit-transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.technology:hover .technology-gradient {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.technology:hover .technology-text {
+  -webkit-transform: translateX(-50%) scale(0.85);
+  transform: translateX(-50%) scale(0.85);
+  opacity: 1;
+  bottom: -25px;
+}
+.technology:hover .technology-gradient::after {
+  -webkit-filter: blur(25px);
+  filter: blur(25px);
+  opacity: 0.35;
+}
+@media screen and (max-width: 540px) {
+  .technology {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1.5rem;
+  }
+  .technology .technology-text {
+    bottom: -15px;
+    font-size: var(--fs-size-xsmall);
+    opacity: 1;
+    padding: 0.25rem 1rem;
+  }
+  .technology:hover .technology-text {
+    bottom: -15px;
+    transform: translateX(-50%) scale(0.9);
+  }
+}

@@ -1,0 +1,45 @@
+.journey-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  gap: 4rem;
+}
+.journey-tabs .journey-tabs-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.journey-tabs .journey-tabs-button:hover {
+  color: var(--secondary);
+}
+.journey-tabs .journey-tabs-button.active {
+  color: var(--primary);
+}
+.journey-tabs .journey-tabs-button .graduation,
+.journey-tabs .journey-tabs-button .work {
+  font-size: var(--fs-size-smedium);
+}
+.journey-tabs .journey-tabs-button .button-label {
+  font-size: var(--fs-size-smedium);
+  font-family: var(--font-rubik);
+  font-weight: var(--medium);
+}
+@media screen and (max-width: 768px) {
+  .journey-tabs .journey-tabs-button .button-label {
+    font-size: var(--fs-xbase);
+  }
+  .journey-tabs .journey-tabs-button .graduation,
+  .journey-tabs .journey-tabs-button .work {
+    font-size: var(--fs-xbase);
+  }
+}
+@media screen and (max-width: 580px) {
+  .journey-tabs {
+    gap: 2rem;
+  }
+}

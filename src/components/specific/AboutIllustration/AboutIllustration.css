@@ -1,0 +1,26 @@
+.about-illustration {
+  position: relative;
+  width: 50%;
+  height: calc(100vh - 160px);
+  min-height: 700px;
+  margin-top: 3.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-illustration .hard-skills-container {
+  position: absolute;
+  z-index: 20;
+  border-radius: 3.125rem;
+  padding: 2rem;
+  background-color: var(--black-10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.about-illustration .hard-skills-container .skills-language-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}

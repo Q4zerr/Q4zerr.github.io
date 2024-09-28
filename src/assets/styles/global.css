@@ -1,0 +1,298 @@
+/*FONTS*/
+@font-face {
+  font-family: "WILD WORLD";
+  src: url("../fonts/WILD-WORLD/WILD-WORLD.otf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Rubik Light */
+@font-face {
+  font-family: "RUBIK";
+  src: url("../fonts/RUBIK/rubik-light.ttf") format("truetype");
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+/* Rubik Light Italic */
+@font-face {
+  font-family: "RUBIK";
+  src: url("../fonts/RUBIK/rubik-lightitalic.ttf") format("truetype");
+  font-weight: 300; /* Light Italic */
+  font-style: italic;
+}
+
+/* Rubik Regular */
+@font-face {
+  font-family: "RUBIK";
+  src: url("../fonts/RUBIK/rubik-regular.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+/* Rubik Italic */
+@font-face {
+  font-family: "RUBIK";
+  src: url("../fonts/RUBIK/rubik-italic.ttf") format("truetype");
+  font-weight: 400; /* Italic */
+  font-style: italic;
+}
+
+/* Rubik Medium */
+@font-face {
+  font-family: "RUBIK";
+  src: url("../fonts/RUBIK/rubik-medium.ttf") format("truetype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+/* Rubik Medium Italic */
+@font-face {
+  font-family: "RUBIK";
+  src: url("../fonts/RUBIK/rubik-mediumitalic.ttf") format("truetype");
+  font-weight: 500; /* Medium Italic */
+  font-style: italic;
+}
+
+/* Rubik Semibold */
+@font-face {
+  font-family: "RUBIK";
+  src: url("../fonts/RUBIK/rubik-semibold.ttf") format("truetype");
+  font-weight: 600; /* Semibold */
+  font-style: normal;
+}
+
+/* Rubik Semibold Italic */
+@font-face {
+  font-family: "RUBIK";
+  src: url("../fonts/RUBIK/rubik-semibolditalic.ttf") format("truetype");
+  font-weight: 600; /* Semibold Italic */
+  font-style: italic;
+}
+
+/* Rubik Bold */
+@font-face {
+  font-family: "RUBIK";
+  src: url("../fonts/RUBIK/rubik-bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+/* Rubik ExtraBold */
+@font-face {
+  font-family: "RUBIK";
+  src: url("../fonts/RUBIK/rubik-extrabold.ttf") format("truetype");
+  font-weight: 800; /* ExtraBold */
+  font-style: normal;
+}
+
+/* Source Code Pro ExtraLight */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-ExtraLight.ttf") format("truetype");
+  font-weight: 200; /* ExtraLight */
+  font-style: normal;
+}
+
+/* Source Code Pro Light */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-Light.ttf") format("truetype");
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+/* Source Code Pro Regular */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-Regular.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+/* Source Code Pro Medium */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-Medium.ttf") format("truetype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+/* Source Code Pro Semibold */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-Semibold.ttf") format("truetype");
+  font-weight: 600; /* Semibold */
+  font-style: normal;
+}
+
+/* Source Code Pro Bold */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+/* Source Code Pro Italic */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-It.ttf") format("truetype");
+  font-weight: 400; /* Regular Italic */
+  font-style: italic;
+}
+
+/* Source Code Pro Light Italic */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-LightIt.ttf") format("truetype");
+  font-weight: 300; /* Light Italic */
+  font-style: italic;
+}
+
+/* Source Code Pro Medium Italic */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-MediumIt.ttf") format("truetype");
+  font-weight: 500; /* Medium Italic */
+  font-style: italic;
+}
+
+/* Source Code Pro Semibold Italic */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-SemiboldIt.ttf") format("truetype");
+  font-weight: 600; /* Semibold Italic */
+  font-style: italic;
+}
+
+/* Source Code Pro Bold Italic */
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("../fonts/ADOBE-SOURCE-CODE-PRO/SourceCodePro-BoldIt.ttf") format("truetype");
+  font-weight: 700; /* Bold Italic */
+  font-style: italic;
+}
+
+/* Tusker Grotesk */
+@font-face {
+  font-family: "Tusker Grotesk";
+  src: url("../fonts/TUSKER-GROTESK/TuskerGrotesk-1500Medium.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Tusker Grotesk */
+@font-face {
+  font-family: "Tusker Grotesk";
+  src: url("../fonts/TUSKER-GROTESK/TuskerGrotesk-3500Medium.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Tusker Grotesk */
+@font-face {
+  font-family: "Tusker Grotesk";
+  src: url("../fonts/TUSKER-GROTESK/TuskerGrotesk-4500Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Tusker Grotesk */
+@font-face {
+  font-family: "Tusker Grotesk";
+  src: url("../fonts/TUSKER-GROTESK/TuskerGrotesk-5700Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+/*Variables Globales*/
+:root {
+  --white: #f0f0f0;
+  --white-10: rgba(240, 240, 240, 0.1);
+  --white-30: rgba(240, 240, 240, 0.3);
+  --white-60: rgba(240, 240, 240, 0.6);
+  --primary: #7338c1;
+  --secondary: #8d6eb5;
+  --secondary-75: rgba(141, 110, 181, 0.75);
+  --background: #201035;
+  --background-80: rgba(32, 16, 53, 0.8);
+  --black: #17131c;
+  --black-v2: #232323;
+  --black-10: rgba(23, 19, 28, 0.1);
+  --black-30: rgba(23, 19, 28, 0.3);
+  --black-90: rgba(23, 19, 28, 0.9);
+  --accent: #654f82;
+  --gradient-linear-primary: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+  --text-shadow-primary: 0 10px 150px rgba(33, 212, 253, 0.85);
+  --text-shadow-black: 0 5px 5px rgba(0, 0, 0, 0.3);
+
+  --font-wild-world: "WILD WOLD", sans-serif;
+  --font-rubik: "RUBIK", sans-serif;
+  --font-source-code-pro: "Source Code Pro", sans-serif;
+  --font-tusker-grotesk: "Tusker Grotesk", sans-serif;
+
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+  --extrabold: 800;
+
+  --fs-size-xsmall: 0.9rem;
+  --fs-size-small: 1rem;
+  --fs-base: 1.2rem;
+  --fs-xbase: 1.5rem;
+  --fs-size-smedium: 1.75rem;
+  --fs-size-medium: 2rem;
+  --fs-size-xmedium: 2.5rem;
+  --fs-size-xlmedium: 3rem;
+  --fs-size-slarge: 4rem;
+  --fs-size-large: 5rem;
+  --fs-size-xlarge: 7rem;
+
+  /*94px + 16px*/
+  --navbar-size: 6.875rem;
+  --circle-size-animated: 80px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::selection {
+  background-color: var(--accent);
+  color: var(--white);
+}
+html {
+  scroll-behavior: smooth;
+}
+body.loaded {
+  height: 100vh;
+}
+.scrollbar-track-y {
+  background-color: var(--secondary-75) !important;
+}
+.scrollbar-thumb {
+  background-color: var(--background-80) !important;
+}
+.privacy-screen {
+  position: fixed;
+  inset: 0;
+  background-color: var(--secondary);
+  z-index: 9999;
+}
+main {
+  padding: 0 2rem;
+}
+#root {
+  overflow: hidden;
+}
+/*DEACTIVATE SCROLLBAR*/
+::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (max-width: 920px) {
+  main {
+    padding: 0;
+  }
+}

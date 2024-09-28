@@ -1,0 +1,33 @@
+.project-specificity .project-details-pitch {
+  width: 55%;
+}
+.project-specificity .project-details-pitch .project-details-pitch-item {
+  font-size: var(--fs-size-xsmall);
+  line-height: 1.8;
+  font-weight: var(--regular);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.project-specificity .project-details-pitch .project-details-pitch-item .highlight {
+  position: relative;
+  display: inline-block;
+}
+.project-specificity .project-details-pitch .project-details-pitch-item .highlight::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: 0.3rem;
+  width: 100%;
+  height: 0.3rem;
+  background-color: var(--primary);
+  opacity: 0.8;
+  transform: skew(-30deg);
+}
+@media screen and (max-width: 650px) {
+  .project-specificity .project-details-pitch {
+    width: 80%;
+  }
+}

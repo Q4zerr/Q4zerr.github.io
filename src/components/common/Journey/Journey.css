@@ -1,0 +1,15 @@
+.journey {
+  position: relative;
+  height: 100vh;
+  min-height: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.journey .journey-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

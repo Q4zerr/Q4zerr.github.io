@@ -1,0 +1,11 @@
+.project-credits .project-credits-list .credit {
+  line-height: 1.5;
+  display: table-row;
+  font-size: var(--fs-size-xsmall);
+}
+.project-credits .project-credits-list .credit > * {
+  display: table-cell;
+}
+.project-credits .project-credits-list .credit .credit-name {
+  padding-right: 2.15rem;
+}

@@ -1,0 +1,200 @@
+.journey-decoration {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.journey-decoration .journey-decoration-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.journey-decoration .journey-decoration-container .bubble-container.c1 {
+  position: absolute;
+  bottom: 0;
+  right: -2rem;
+  width: 250px;
+  height: 250px;
+}
+.journey-decoration .journey-decoration-container .bubble-container.c2 {
+  position: absolute;
+  top: 15%;
+  left: -2rem;
+  width: 150px;
+  height: 150px;
+}
+.journey-decoration-container .bubble-container.c1 .bubble,
+.journey-decoration-container .bubble-container.c2 .bubble {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 20px 20px rgba(0, 0, 0, 0.05), inset 25px 25px 45px rgba(255, 255, 255, 0.6);
+  animation: bubble 6s infinite ease-in-out;
+  background-color: rgba(141, 110, 181, 0.7);
+}
+.journey-decoration-container .bubble-container.c1 .bubble.b1 {
+  position: absolute;
+  bottom: -25%;
+  left: -15%;
+  width: 40%;
+  height: 40%;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 20px 20px rgba(0, 0, 0, 0.05), inset 25px 25px 45px rgba(255, 255, 255, 0.2);
+  animation: bubble1 8s infinite ease-in-out;
+}
+.journey-decoration-container .bubble-container.c2 .bubble.b1 {
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  bottom: -60%;
+  left: 10%;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 20px 20px rgba(0, 0, 0, 0.05), inset 25px 25px 45px rgba(255, 255, 255, 0.45);
+  animation: bubble5 6s infinite ease-in-out;
+}
+.journey-decoration-container .bubble-container.c1 .bubble.b2 {
+  position: absolute;
+  top: 30%;
+  left: -5%;
+  width: 10%;
+  height: 10%;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 20px 20px rgba(0, 0, 0, 0.05), inset 25px 25px 45px rgba(255, 255, 255, 0.4);
+  animation: bubble2 10s infinite ease-in-out;
+}
+.journey-decoration-container .bubble-container.c2 .bubble.b2 {
+  position: absolute;
+  top: 0%;
+  right: -18%;
+  width: 24%;
+  height: 24%;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 20px 20px rgba(0, 0, 0, 0.05), inset 20px 50px 10px rgba(255, 255, 255, 0.3);
+  animation: bubble2 12s infinite ease-in-out;
+}
+.journey-decoration-container .bubble-container.c1 .bubble.b3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15%;
+  height: 15%;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 20px 20px rgba(0, 0, 0, 0.05), inset 25px 25px 45px rgba(255, 255, 255, 0.4);
+  animation: bubble3 12s infinite ease-in-out;
+}
+.journey-decoration-container .bubble-container.c2 .bubble.b3 {
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 65%;
+  height: 65%;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 10px 15px 5px rgba(0, 0, 0, 0.05), 25px 20px 20px rgba(0, 0, 0, 0.05), inset 20px 50px 40px rgba(255, 255, 255, 0.4);
+  animation: bubble6 20s infinite ease-in-out;
+}
+.journey-decoration-container .bubble-container.c1 .bubble.b4 {
+  position: absolute;
+  top: 5%;
+  width: 30%;
+  height: 30%;
+  transform: translate(-50%, -50%);
+  animation: bubble4 15s infinite ease-in-out;
+}
+@keyframes bubble {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bubble1 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-30%, -40%) scale(0.85);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes bubble2 {
+  0% {
+    transform: translate(-30%, 0%) scale(0.85);
+  }
+  50% {
+    transform: translate(-50%, -40%) scale(0.65);
+  }
+  100% {
+    transform: translate(-30%, 0%) scale(0.85);
+  }
+}
+@keyframes bubble3 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bubble4 {
+  0% {
+    transform: translate(-75%, -75%) scale(0.9);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.75);
+  }
+  100% {
+    transform: translate(-75%, -75%) scale(0.9);
+  }
+}
+@keyframes bubble5 {
+  0% {
+    transform: translate(-10%, 10%) scale(1);
+  }
+  50% {
+    transform: translate(0%, 0%) scale(0.9);
+  }
+  100% {
+    transform: translate(-10%, 10%) scale(1);
+  }
+}
+@keyframes bubble6 {
+  0% {
+    transform: translate(15%, 15%) scale(1) rotate(120deg);
+  }
+  50% {
+    transform: translate(0%, 0%) scale(0.9) rotate(120deg);
+  }
+  100% {
+    transform: translate(15%, 15%) scale(1) rotate(120deg);
+  }
+}
+@media screen and (max-width: 920px) {
+  .journey-decoration .journey-decoration-container .bubble-container.c1 {
+    width: 200px;
+    height: 200px;
+  }
+  .journey-decoration .journey-decoration-container .bubble-container.c2 {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .journey-decoration .journey-decoration-container .bubble-container.c1 {
+    width: 125px;
+    height: 125px;
+  }
+  .journey-decoration .journey-decoration-container .bubble-container.c2 {
+    width: 75px;
+    height: 75px;
+  }
+  .journey-decoration .journey-decoration-container .bubble-container.c2 {
+    left: -0.5rem;
+  }
+  .journey-decoration .journey-decoration-container .bubble-container.c1 {
+    right: -0.5rem;
+  }
+}

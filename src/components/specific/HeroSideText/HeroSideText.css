@@ -1,0 +1,92 @@
+.hero-side-text {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+  position: relative;
+}
+.hero-side-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--white);
+  font-family: var(--font-rubik);
+  animation: float 4s ease-in-out infinite;
+}
+.hero-side-text-container .side-text-top {
+  font-size: var(--fs-size-xmedium);
+  font-weight: var(--light);
+  margin-bottom: 0.25rem;
+  opacity: 0.5;
+}
+.hero-side-text-container .side-text-title {
+  font-family: var(--font-tusker-grotesk);
+  font-size: var(--fs-size-xlarge);
+  font-weight: var(--light);
+  letter-spacing: 0.25rem;
+  line-height: 145%;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+.hero-side-text-container .side-text-title {
+  -webkit-text-fill-color: transparent;
+  background: var(--gradient-linear-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: var(--text-shadow-primary);
+}
+.hero-side-text-container .side-text-skills {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  font-size: var(--fs-base);
+  padding: 0.625rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.hero-side-text-container .side-text-skills > .skills {
+  display: block;
+  width: 100%;
+  opacity: 0.5;
+  text-align: center;
+  font-weight: var(--light);
+}
+.hero-side-text-container .side-text-code {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.hero-side-text-container .side-text-code .code-desc {
+  text-align: left;
+  font-family: var(--font-source-code-pro);
+  opacity: 0.5;
+  font-weight: var(--light);
+  letter-spacing: 0.05rem;
+}
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-15px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+@media screen and (max-width: 440px) {
+  .hero-side-text-container .side-text-top {
+    font-size: var(--fs-size-medium);
+  }
+  .hero-side-text-container .side-text-title {
+    font-size: calc(var(--fs-size-large) + 1rem);
+  }
+  .hero-side-text-container .side-text-skills {
+    font-size: var(--fs-size-small);
+  }
+  .hero-side-text-container .side-text-code .code-desc {
+    font-size: var(--fs-size-small);
+  }
+}

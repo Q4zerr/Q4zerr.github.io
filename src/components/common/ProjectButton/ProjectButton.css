@@ -1,0 +1,33 @@
+.project-button .project-button-website {
+  padding: 1.25rem 2rem;
+  text-transform: uppercase;
+  border-radius: 5rem;
+  text-decoration: none;
+  font-family: var(--font-tusker-grotesk);
+  font-size: var(--fs-xbase);
+  display: inline-block;
+  position: relative;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  overflow: hidden;
+  transition: color 0.4s ease-out;
+  line-height: 1.1;
+  text-align: center;
+}
+.project-button .project-button-website::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 101%;
+  height: 101%;
+  z-index: -1;
+  transform: translateY(-101%);
+  background-color: var(--primary);
+  transition: 0.4s ease;
+}
+.project-button .project-button-website:hover {
+  color: var(--white);
+}
+.project-button .project-button-website:hover::before {
+  transform: translateY(0);
+}

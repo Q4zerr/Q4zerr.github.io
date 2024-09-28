@@ -1,0 +1,51 @@
+.project-navigation .project-navigation-link {
+  text-align: right;
+  font-size: var(--fs-size-large);
+  flex: 0 1 0;
+  position: relative;
+  font-family: var(--font-tusker-grotesk);
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px var(--white);
+  color: transparent;
+  transition: color 0.2s ease-in-out;
+}
+.project-navigation .project-navigation-link:hover {
+  -webkit-text-stroke: 1px transparent;
+  color: var(--white);
+  text-shadow: var(--text-shadow-black);
+}
+.project-navigation .project-navigation-separator {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 16vw;
+  transform: skew(-7deg);
+  margin: 0 4vw;
+}
+.project-navigation .project-navigation-separator .project-navigation-separator-item {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  left: 50%;
+  bottom: auto;
+  height: 100%;
+  width: 100%;
+  background-color: var(--white);
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 650px) {
+  .project-navigation .project-navigation-link {
+    font-size: var(--fs-size-slarge);
+  }
+}
+@media screen and (max-width: 500px) {
+  .project-navigation .project-navigation-link {
+    font-size: var(--fs-size-xlmedium);
+  }
+}
+@media screen and (max-width: 400px) {
+  .project-navigation .project-navigation-link {
+    font-size: var(--fs-size-smedium);
+  }
+}

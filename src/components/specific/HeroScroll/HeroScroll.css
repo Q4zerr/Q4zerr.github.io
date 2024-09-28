@@ -1,0 +1,118 @@
+.hero-scroll {
+  position: absolute;
+  bottom: 75px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.hero-scroll .hero-scroll-btn,
+.hero-scroll .hero-scroll-shadow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+  border-radius: 50%;
+  height: 112px;
+  width: 112px;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+.hero-scroll .hero-scroll-btn span,
+.hero-scroll .hero-scroll-shadow span {
+  animation: scrollMove 3.4s infinite ease-in-out;
+}
+.hero-scroll .hero-scroll-shadow {
+  position: absolute;
+  pointer-events: none;
+  left: 50%;
+  bottom: 0;
+  transition: 0.5s ease-in-out;
+  z-index: 1;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.hero-scroll .hero-scroll-shadow path {
+  stroke: #fff;
+  stroke-width: 6px;
+  color: transparent;
+}
+.hero-scroll .hero-scroll-shadow:nth-child(2) {
+  bottom: 10px;
+  opacity: 0.5;
+  -webkit-transform: translateX(-50%) scale(0.95);
+  transform: translateX(-50%) scale(0.95);
+}
+.hero-scroll .hero-scroll-shadow:nth-child(3) {
+  bottom: 20px;
+  opacity: 0.25;
+  -webkit-transform: translateX(-50%) scale(0.9);
+  transform: translateX(-50%) scale(0.9);
+}
+.hero-scroll .hero-scroll-shadow:nth-child(4) {
+  bottom: 30px;
+  opacity: 0.1;
+  -webkit-transform: translateX(-50%) scale(0.85);
+  transform: translateX(-50%) scale(0.85);
+}
+/*HOVER*/
+/* .hero-scroll:hover .hero-scroll-btn {
+  background-color: var(--white);
+  color: var(--black);
+}
+.hero-scroll:hover .hero-scroll-shadow {
+  bottom: 0;
+  -webkit-transform: translateX(-50%) scale(0.95);
+  transform: translateX(-50%) scale(0.95);
+  transition: 0.4s;
+}
+.hero-scroll:hover .hero-scroll-btn span,
+.hero-scroll:hover .hero-scroll-shadow span {
+  animation: unset;
+} */
+/*ANIMATION*/
+.hero-scroll .hero-scroll-btn span {
+  animation-delay: 1s;
+}
+.hero-scroll .hero-scroll-shadow:nth-child(2) span {
+  animation-delay: 1.3s;
+}
+.hero-scroll .hero-scroll-shadow:nth-child(3) span {
+  animation-delay: 1.5s;
+}
+.hero-scroll .hero-scroll-shadow:nth-child(4) span {
+  animation-delay: 1.7s;
+}
+@keyframes scrollMove {
+  0% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero-scroll .hero-scroll-btn,
+  .hero-scroll .hero-scroll-shadow {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hero-scroll .hero-scroll-btn,
+  .hero-scroll .hero-scroll-shadow {
+    width: 88px;
+    height: 88px;
+  }
+}

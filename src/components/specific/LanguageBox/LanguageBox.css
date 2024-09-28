@@ -1,0 +1,67 @@
+.language-box {
+  height: 54px;
+  width: 54px;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+}
+.language-box .language-title {
+  position: absolute;
+  left: 50%;
+  top: -15%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  color: var(--white);
+  font-family: var(--font-rubik);
+  font-size: var(--fs-base);
+  font-weight: var(--light);
+  letter-spacing: 1px;
+  margin: 0;
+  transition: 0.25s;
+  z-index: 21;
+  opacity: 0;
+}
+.language-box .language-icon img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.language-box:hover .language-title {
+  opacity: 1;
+}
+/*DIFFERENT COLOR FOR SKILLS*/
+.language-box.js {
+  background: linear-gradient(45deg, #f1f097 0.14%, #fff649 99.86%);
+}
+.language-box.py {
+  background: linear-gradient(45deg, #67b26f 0.14%, #4ca2cd 99.86%);
+}
+.language-box.rc {
+  background: linear-gradient(225.22deg, #93ffff -0.09%, #59a5ff 100.01%);
+}
+.language-box.php {
+  background: linear-gradient(225deg, #99daff 0.14%, #a966ff 99.86%);
+}
+.language-box.lrv {
+  background: linear-gradient(225deg, #f55f71 0.14%, #f89d93 99.86%);
+}
+.language-box.csharp {
+  background: linear-gradient(225deg, #673ab7 0.14%, #512da8 99.86%);
+}
+.language-box.jva {
+  background: linear-gradient(225deg, #f2994a 0.14%, #f2c94c 99.86%);
+}
+.language-box.sql {
+  background: linear-gradient(225deg, #12c2e9 0.14%, #c471ed 99.86%);
+}
+.language-box.uty {
+  background: linear-gradient(45deg, #283048 0.14%, #859398 99.86%);
+}
+
+@media screen and (max-width: 1200px) {
+  .language-box {
+    height: 46px;
+    width: 46px;
+    padding: 0.5rem;
+  }
+}

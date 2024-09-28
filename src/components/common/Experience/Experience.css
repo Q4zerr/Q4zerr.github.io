@@ -1,0 +1,17 @@
+.experience {
+  position: relative;
+  padding: 3.125rem 0;
+  padding-top: 18.75rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.experience .experience-grid {
+  width: 100%;
+  max-width: calc(900px + 6rem);
+  gap: 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

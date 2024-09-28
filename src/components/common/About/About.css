@@ -1,0 +1,20 @@
+.about {
+  position: relative;
+  height: 100vh;
+  min-height: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 6vw;
+}
+@media screen and (max-width: 890px) {
+  .about .about-container .about-illustration {
+    display: none;
+  }
+}
